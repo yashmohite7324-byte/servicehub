@@ -1,0 +1,24 @@
+Array
+(
+    [http_code] => 400
+    [response] => {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+    [error] => 
+)
+Array
+(
+    [http_code] => 400
+    [response] => {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+    [error] => 
+)
+Array
+(
+    [http_code] => 400
+    [response] => {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+    [error] => 
+)
+Array
+(
+    [http_code] => 400
+    [response] => {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+    [error] => 
+)

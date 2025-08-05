@@ -1,0 +1,285 @@
+[26-Jul-2025 00:51:04 Europe/Berlin] Payment Error: API request failed with status: 400
+[26-Jul-2025 00:53:28 Europe/Berlin] Payment Error: API request failed with status: 400. Response: {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+[26-Jul-2025 00:54:50 Europe/Berlin] Payment Error: API request failed with status: 400. Response: {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+[26-Jul-2025 00:54:58 Europe/Berlin] Payment Error: API request failed with status: 400. Response: {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+[26-Jul-2025 01:03:56 Europe/Berlin] Payment Error: API request failed with status: 400. Response: {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+[26-Jul-2025 01:09:13 Europe/Berlin] Payment Error: API request failed with status: 404. Response: {"success":false,"code":"404"}
+[26-Jul-2025 01:14:36 Europe/Berlin] Payment Error: API request failed with status: 404. Response: {"success":false,"code":"404"}
+[26-Jul-2025 01:15:01 Europe/Berlin] Payment Error: API request failed with status: 404. Response: {"success":false,"code":"404"}
+[26-Jul-2025 01:18:45 Europe/Berlin] Attempting payment with transaction ID: TXN17534855252
+[26-Jul-2025 01:18:45 Europe/Berlin] Request Data: Array
+(
+    [merchantId] => TEST-M23KNTTTK5Z8N_25072
+    [merchantTransactionId] => TXN17534855252
+    [merchantUserId] => 2
+    [amount] => 10000
+    [redirectUrl] => http://localhost/php/public/dashboard.php
+    [redirectMode] => POST
+    [callbackUrl] => https://webhook.site/your-unique-url
+    [paymentInstrument] => Array
+        (
+            [type] => PAY_PAGE
+        )
+
+)
+
+[26-Jul-2025 01:18:45 Europe/Berlin] Base64 Payload: eyJtZXJjaGFudElkIjoiVEVTVC1NMjNLTlRUVEs1WjhOXzI1MDcyIiwibWVyY2hhbnRUcmFuc2FjdGlvbklkIjoiVFhOMTc1MzQ4NTUyNTIiLCJtZXJjaGFudFVzZXJJZCI6MiwiYW1vdW50IjoxMDAwMCwicmVkaXJlY3RVcmwiOiJodHRwOi8vbG9jYWxob3N0L3BocC9wdWJsaWMvZGFzaGJvYXJkLnBocCIsInJlZGlyZWN0TW9kZSI6IlBPU1QiLCJjYWxsYmFja1VybCI6Imh0dHBzOi8vd2ViaG9vay5zaXRlL3lvdXItdW5pcXVlLXVybCIsInBheW1lbnRJbnN0cnVtZW50Ijp7InR5cGUiOiJQQVlfUEFHRSJ9fQ==
+[26-Jul-2025 01:18:45 Europe/Berlin] Checksum String: eyJtZXJjaGFudElkIjoiVEVTVC1NMjNLTlRUVEs1WjhOXzI1MDcyIiwibWVyY2hhbnRUcmFuc2FjdGlvbklkIjoiVFhOMTc1MzQ4NTUyNTIiLCJtZXJjaGFudFVzZXJJZCI6MiwiYW1vdW50IjoxMDAwMCwicmVkaXJlY3RVcmwiOiJodHRwOi8vbG9jYWxob3N0L3BocC9wdWJsaWMvZGFzaGJvYXJkLnBocCIsInJlZGlyZWN0TW9kZSI6IlBPU1QiLCJjYWxsYmFja1VybCI6Imh0dHBzOi8vd2ViaG9vay5zaXRlL3lvdXItdW5pcXVlLXVybCIsInBheW1lbnRJbnN0cnVtZW50Ijp7InR5cGUiOiJQQVlfUEFHRSJ9fQ==/pg/v1/payM2EzOGE4NmItYzY3OC00ODI2LTk0NDQtZDY0Mjc4OGU3MWUx
+[26-Jul-2025 01:18:45 Europe/Berlin] Final Checksum: 63f4c43b27064bb77c4a0a8fc2000535a6ae1eeedd0eff938f3a5e209d1fa2fe###1
+[26-Jul-2025 01:18:45 Europe/Berlin] Making request to: https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay
+[26-Jul-2025 01:18:46 Europe/Berlin] cURL Verbose Log: *   Trying [2606:4700:90d1:d424:1fc5:56e:6ae4:7e4e]:443...
+* Connected to api-preprod.phonepe.com (2606:4700:90d1:d424:1fc5:56e:6ae4:7e4e) port 443
+* ALPN: curl offers http/1.1
+*  CAfile: C:\xampp\apache\bin\curl-ca-bundle.crt
+*  CApath: none
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN: server accepted http/1.1
+* Server certificate:
+*  subject: CN=*.phonepe.com
+*  start date: Jun  4 10:20:38 2025 GMT
+*  expire date: Jun  4 10:20:38 2026 GMT
+*  subjectAltName: host "api-preprod.phonepe.com" matched cert's "*.phonepe.com"
+*  issuer: C=US; ST=Arizona; L=Scottsdale; O=GoDaddy.com, Inc.; OU=http://certs.godaddy.com/repository/; CN=Go Daddy Secure Certificate Authority - G2
+*  SSL certificate verify ok.
+* using HTTP/1.1
+> POST /apis/pg-sandbox/pg/v1/pay HTTP/1.1
+Host: api-preprod.phonepe.com
+Content-Type: application/json
+X-VERIFY: 63f4c43b27064bb77c4a0a8fc2000535a6ae1eeedd0eff938f3a5e209d1fa2fe###1
+accept: application/json
+Content-Length: 402
+
+* old SSL session ID is stale, removing
+< HTTP/1.1 400 Bad Request
+< Date: Fri, 25 Jul 2025 23:18:48 GMT
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< x-requested-method: POST
+< access-control-allow-origin: *
+< access-control-allow-headers: Cache-Control,If-Modified-Since,Pragma,Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin, X-VERIFY, X-MERCHANT-ID, X-CALLBACK-URL, checkouttype, x-app-package-name, x-request-env, x-auth-token, x-browser-fingerprint, x-client, x-client-major-version, x-client-name, x-client-subtype, x-client-type, x-client-version, x-device-type, x-encrypted, x-merchant-domain, x-source, x-source-channel, x-source-channel-version, x-source-integration-mode
+< access-control-allow-methods: OPTIONS,GET,PUT,POST,DELETE,HEAD
+< x-response-backend-time: 1753485528923
+< x-request-backend-time: 1753485528896
+< x-frame-options: DENY
+< x-content-type-options: nosniff
+< x-xss-protection: 1; mode=block
+< strict-transport-security: max-age=0; includeSubDomains; preload
+< cf-cache-status: DYNAMIC
+< Server: cloudflare
+< CF-RAY: 964f60eb1da24043-BOM
+< 
+* Connection #0 to host api-preprod.phonepe.com left intact
+
+[26-Jul-2025 01:18:46 Europe/Berlin] Response Code: 400
+[26-Jul-2025 01:18:46 Europe/Berlin] Response: {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+[26-Jul-2025 01:18:46 Europe/Berlin] cURL Error: None
+[26-Jul-2025 01:18:46 Europe/Berlin] Payment Error: API request failed with status: 400. Response: {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+[26-Jul-2025 01:20:30 Europe/Berlin] Attempting payment with transaction ID: TXN17534856302
+[26-Jul-2025 01:20:30 Europe/Berlin] Request Data: Array
+(
+    [merchantId] => TEST-M23KNTTTK5Z8N_25072
+    [merchantTransactionId] => TXN17534856302
+    [merchantUserId] => 2
+    [amount] => 10000
+    [redirectUrl] => http://localhost/php/public/dashboard.php
+    [redirectMode] => POST
+    [callbackUrl] => https://webhook.site/397a12dc-68fd-49ca-89ea-efb12891694d
+    [paymentInstrument] => Array
+        (
+            [type] => PAY_PAGE
+        )
+
+)
+
+[26-Jul-2025 01:20:30 Europe/Berlin] Base64 Payload: eyJtZXJjaGFudElkIjoiVEVTVC1NMjNLTlRUVEs1WjhOXzI1MDcyIiwibWVyY2hhbnRUcmFuc2FjdGlvbklkIjoiVFhOMTc1MzQ4NTYzMDIiLCJtZXJjaGFudFVzZXJJZCI6MiwiYW1vdW50IjoxMDAwMCwicmVkaXJlY3RVcmwiOiJodHRwOi8vbG9jYWxob3N0L3BocC9wdWJsaWMvZGFzaGJvYXJkLnBocCIsInJlZGlyZWN0TW9kZSI6IlBPU1QiLCJjYWxsYmFja1VybCI6Imh0dHBzOi8vd2ViaG9vay5zaXRlLzM5N2ExMmRjLTY4ZmQtNDljYS04OWVhLWVmYjEyODkxNjk0ZCIsInBheW1lbnRJbnN0cnVtZW50Ijp7InR5cGUiOiJQQVlfUEFHRSJ9fQ==
+[26-Jul-2025 01:20:30 Europe/Berlin] Checksum String: eyJtZXJjaGFudElkIjoiVEVTVC1NMjNLTlRUVEs1WjhOXzI1MDcyIiwibWVyY2hhbnRUcmFuc2FjdGlvbklkIjoiVFhOMTc1MzQ4NTYzMDIiLCJtZXJjaGFudFVzZXJJZCI6MiwiYW1vdW50IjoxMDAwMCwicmVkaXJlY3RVcmwiOiJodHRwOi8vbG9jYWxob3N0L3BocC9wdWJsaWMvZGFzaGJvYXJkLnBocCIsInJlZGlyZWN0TW9kZSI6IlBPU1QiLCJjYWxsYmFja1VybCI6Imh0dHBzOi8vd2ViaG9vay5zaXRlLzM5N2ExMmRjLTY4ZmQtNDljYS04OWVhLWVmYjEyODkxNjk0ZCIsInBheW1lbnRJbnN0cnVtZW50Ijp7InR5cGUiOiJQQVlfUEFHRSJ9fQ==/pg/v1/payM2EzOGE4NmItYzY3OC00ODI2LTk0NDQtZDY0Mjc4OGU3MWUx
+[26-Jul-2025 01:20:30 Europe/Berlin] Final Checksum: 7da969a5617d411354a0c34a2ab84e80291cfa00e88f5b40ad857feee409cf19###1
+[26-Jul-2025 01:20:30 Europe/Berlin] Making request to: https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay
+[26-Jul-2025 01:20:31 Europe/Berlin] cURL Verbose Log: *   Trying [2606:4700:8391:d424:1fc5:56d:6ae4:7e4e]:443...
+* Connected to api-preprod.phonepe.com (2606:4700:8391:d424:1fc5:56d:6ae4:7e4e) port 443
+* ALPN: curl offers http/1.1
+*  CAfile: C:\xampp\apache\bin\curl-ca-bundle.crt
+*  CApath: none
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN: server accepted http/1.1
+* Server certificate:
+*  subject: CN=*.phonepe.com
+*  start date: Jun  4 10:20:38 2025 GMT
+*  expire date: Jun  4 10:20:38 2026 GMT
+*  subjectAltName: host "api-preprod.phonepe.com" matched cert's "*.phonepe.com"
+*  issuer: C=US; ST=Arizona; L=Scottsdale; O=GoDaddy.com, Inc.; OU=http://certs.godaddy.com/repository/; CN=Go Daddy Secure Certificate Authority - G2
+*  SSL certificate verify ok.
+* using HTTP/1.1
+> POST /apis/pg-sandbox/pg/v1/pay HTTP/1.1
+Host: api-preprod.phonepe.com
+Content-Type: application/json
+X-VERIFY: 7da969a5617d411354a0c34a2ab84e80291cfa00e88f5b40ad857feee409cf19###1
+accept: application/json
+Content-Length: 430
+
+* old SSL session ID is stale, removing
+< HTTP/1.1 400 Bad Request
+< Date: Fri, 25 Jul 2025 23:20:33 GMT
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< x-requested-method: POST
+< access-control-allow-origin: *
+< access-control-allow-headers: Cache-Control,If-Modified-Since,Pragma,Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin, X-VERIFY, X-MERCHANT-ID, X-CALLBACK-URL, checkouttype, x-app-package-name, x-request-env, x-auth-token, x-browser-fingerprint, x-client, x-client-major-version, x-client-name, x-client-subtype, x-client-type, x-client-version, x-device-type, x-encrypted, x-merchant-domain, x-source, x-source-channel, x-source-channel-version, x-source-integration-mode
+< access-control-allow-methods: OPTIONS,GET,PUT,POST,DELETE,HEAD
+< x-response-backend-time: 1753485633611
+< x-request-backend-time: 1753485633577
+< x-frame-options: DENY
+< x-content-type-options: nosniff
+< x-xss-protection: 1; mode=block
+< strict-transport-security: max-age=0; includeSubDomains; preload
+< cf-cache-status: DYNAMIC
+< Server: cloudflare
+< CF-RAY: 964f637818d6a6bc-DEL
+< 
+* Connection #0 to host api-preprod.phonepe.com left intact
+
+[26-Jul-2025 01:20:31 Europe/Berlin] Response Code: 400
+[26-Jul-2025 01:20:31 Europe/Berlin] Response: {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+[26-Jul-2025 01:20:31 Europe/Berlin] cURL Error: None
+[26-Jul-2025 01:20:31 Europe/Berlin] Payment Error: API request failed with status: 400. Response: {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+[26-Jul-2025 01:22:31 Europe/Berlin] Attempting payment with transaction ID: TXN17534857512
+[26-Jul-2025 01:22:31 Europe/Berlin] Request Data: Array
+(
+    [merchantId] => TEST-M23KNTTTK5Z8N_25072
+    [merchantTransactionId] => TXN17534857512
+    [merchantUserId] => 2
+    [amount] => 10000
+    [redirectUrl] => http://localhost/php/public/dashboard.php
+    [redirectMode] => POST
+    [callbackUrl] => https://webhook.site/397a12dc-68fd-49ca-89ea-efb12891694d
+    [paymentInstrument] => Array
+        (
+            [type] => PAY_PAGE
+        )
+
+)
+
+[26-Jul-2025 01:22:31 Europe/Berlin] Base64 Payload: eyJtZXJjaGFudElkIjoiVEVTVC1NMjNLTlRUVEs1WjhOXzI1MDcyIiwibWVyY2hhbnRUcmFuc2FjdGlvbklkIjoiVFhOMTc1MzQ4NTc1MTIiLCJtZXJjaGFudFVzZXJJZCI6MiwiYW1vdW50IjoxMDAwMCwicmVkaXJlY3RVcmwiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3BocFwvcHVibGljXC9kYXNoYm9hcmQucGhwIiwicmVkaXJlY3RNb2RlIjoiUE9TVCIsImNhbGxiYWNrVXJsIjoiaHR0cHM6XC9cL3dlYmhvb2suc2l0ZVwvMzk3YTEyZGMtNjhmZC00OWNhLTg5ZWEtZWZiMTI4OTE2OTRkIiwicGF5bWVudEluc3RydW1lbnQiOnsidHlwZSI6IlBBWV9QQUdFIn19
+[26-Jul-2025 01:22:31 Europe/Berlin] Checksum String: eyJtZXJjaGFudElkIjoiVEVTVC1NMjNLTlRUVEs1WjhOXzI1MDcyIiwibWVyY2hhbnRUcmFuc2FjdGlvbklkIjoiVFhOMTc1MzQ4NTc1MTIiLCJtZXJjaGFudFVzZXJJZCI6MiwiYW1vdW50IjoxMDAwMCwicmVkaXJlY3RVcmwiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3BocFwvcHVibGljXC9kYXNoYm9hcmQucGhwIiwicmVkaXJlY3RNb2RlIjoiUE9TVCIsImNhbGxiYWNrVXJsIjoiaHR0cHM6XC9cL3dlYmhvb2suc2l0ZVwvMzk3YTEyZGMtNjhmZC00OWNhLTg5ZWEtZWZiMTI4OTE2OTRkIiwicGF5bWVudEluc3RydW1lbnQiOnsidHlwZSI6IlBBWV9QQUdFIn19/pg/v1/payM2EzOGE4NmItYzY3OC00ODI2LTk0NDQtZDY0Mjc4OGU3MWUx
+[26-Jul-2025 01:22:31 Europe/Berlin] Final Checksum: fea1459139c1340d32b3f9e9e80b5cf85597813070ad78f31081de5232122c31###1
+[26-Jul-2025 01:22:31 Europe/Berlin] Making request to: https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay
+[26-Jul-2025 01:22:31 Europe/Berlin] cURL Verbose Log: *   Trying [2606:4700:90d1:d424:1fa7:56e:6ae4:7e4e]:443...
+* Connected to api-preprod.phonepe.com (2606:4700:90d1:d424:1fa7:56e:6ae4:7e4e) port 443
+* ALPN: curl offers http/1.1
+*  CAfile: C:\xampp\apache\bin\curl-ca-bundle.crt
+*  CApath: none
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN: server accepted http/1.1
+* Server certificate:
+*  subject: CN=*.phonepe.com
+*  start date: Jun  4 10:20:38 2025 GMT
+*  expire date: Jun  4 10:20:38 2026 GMT
+*  subjectAltName: host "api-preprod.phonepe.com" matched cert's "*.phonepe.com"
+*  issuer: C=US; ST=Arizona; L=Scottsdale; O=GoDaddy.com, Inc.; OU=http://certs.godaddy.com/repository/; CN=Go Daddy Secure Certificate Authority - G2
+*  SSL certificate verify ok.
+* using HTTP/1.1
+> POST /apis/pg-sandbox/pg/v1/pay HTTP/1.1
+Host: api-preprod.phonepe.com
+Content-Type: application/json
+X-VERIFY: fea1459139c1340d32b3f9e9e80b5cf85597813070ad78f31081de5232122c31###1
+accept: application/json
+Content-Length: 438
+
+* old SSL session ID is stale, removing
+< HTTP/1.1 400 Bad Request
+< Date: Fri, 25 Jul 2025 23:22:34 GMT
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< x-requested-method: POST
+< access-control-allow-origin: *
+< access-control-allow-headers: Cache-Control,If-Modified-Since,Pragma,Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin, X-VERIFY, X-MERCHANT-ID, X-CALLBACK-URL, checkouttype, x-app-package-name, x-request-env, x-auth-token, x-browser-fingerprint, x-client, x-client-major-version, x-client-name, x-client-subtype, x-client-type, x-client-version, x-device-type, x-encrypted, x-merchant-domain, x-source, x-source-channel, x-source-channel-version, x-source-integration-mode
+< access-control-allow-methods: OPTIONS,GET,PUT,POST,DELETE,HEAD
+< x-response-backend-time: 1753485754525
+< x-request-backend-time: 1753485754497
+< x-frame-options: DENY
+< x-content-type-options: nosniff
+< x-xss-protection: 1; mode=block
+< strict-transport-security: max-age=0; includeSubDomains; preload
+< cf-cache-status: DYNAMIC
+< Server: cloudflare
+< CF-RAY: 964f666d0b05afb0-BOM
+< 
+* Connection #0 to host api-preprod.phonepe.com left intact
+
+[26-Jul-2025 01:22:31 Europe/Berlin] Response Code: 400
+[26-Jul-2025 01:22:31 Europe/Berlin] Response: {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+[26-Jul-2025 01:22:31 Europe/Berlin] cURL Error: None
+[26-Jul-2025 01:22:31 Europe/Berlin] Payment Error: API request failed with status: 400. Response: {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+[03-Aug-2025 20:22:00 Europe/Berlin] Attempting payment with transaction ID: TXN17542453202
+[03-Aug-2025 20:22:00 Europe/Berlin] Request Data: Array
+(
+    [merchantId] => TEST-M23KNTTTK5Z8N_25072
+    [merchantTransactionId] => TXN17542453202
+    [merchantUserId] => 2
+    [amount] => 20000
+    [redirectUrl] => http://localhost/php/public/dashboard.php
+    [redirectMode] => POST
+    [callbackUrl] => https://webhook.site/397a12dc-68fd-49ca-89ea-efb12891694d
+    [paymentInstrument] => Array
+        (
+            [type] => PAY_PAGE
+        )
+
+)
+
+[03-Aug-2025 20:22:00 Europe/Berlin] Base64 Payload: eyJtZXJjaGFudElkIjoiVEVTVC1NMjNLTlRUVEs1WjhOXzI1MDcyIiwibWVyY2hhbnRUcmFuc2FjdGlvbklkIjoiVFhOMTc1NDI0NTMyMDIiLCJtZXJjaGFudFVzZXJJZCI6MiwiYW1vdW50IjoyMDAwMCwicmVkaXJlY3RVcmwiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3BocFwvcHVibGljXC9kYXNoYm9hcmQucGhwIiwicmVkaXJlY3RNb2RlIjoiUE9TVCIsImNhbGxiYWNrVXJsIjoiaHR0cHM6XC9cL3dlYmhvb2suc2l0ZVwvMzk3YTEyZGMtNjhmZC00OWNhLTg5ZWEtZWZiMTI4OTE2OTRkIiwicGF5bWVudEluc3RydW1lbnQiOnsidHlwZSI6IlBBWV9QQUdFIn19
+[03-Aug-2025 20:22:00 Europe/Berlin] Checksum String: eyJtZXJjaGFudElkIjoiVEVTVC1NMjNLTlRUVEs1WjhOXzI1MDcyIiwibWVyY2hhbnRUcmFuc2FjdGlvbklkIjoiVFhOMTc1NDI0NTMyMDIiLCJtZXJjaGFudFVzZXJJZCI6MiwiYW1vdW50IjoyMDAwMCwicmVkaXJlY3RVcmwiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3BocFwvcHVibGljXC9kYXNoYm9hcmQucGhwIiwicmVkaXJlY3RNb2RlIjoiUE9TVCIsImNhbGxiYWNrVXJsIjoiaHR0cHM6XC9cL3dlYmhvb2suc2l0ZVwvMzk3YTEyZGMtNjhmZC00OWNhLTg5ZWEtZWZiMTI4OTE2OTRkIiwicGF5bWVudEluc3RydW1lbnQiOnsidHlwZSI6IlBBWV9QQUdFIn19/pg/v1/payM2EzOGE4NmItYzY3OC00ODI2LTk0NDQtZDY0Mjc4OGU3MWUx
+[03-Aug-2025 20:22:00 Europe/Berlin] Final Checksum: 671f83bbc085cf067ce002f892cbb8a40c3247a8ab5515d2494470d2b353a8de###1
+[03-Aug-2025 20:22:00 Europe/Berlin] Making request to: https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay
+[03-Aug-2025 20:22:00 Europe/Berlin] cURL Verbose Log: *   Trying 2606:4700:90d1:d424:1f9e:2c:6ae4:7e4e:443...
+* Connected to api-preprod.phonepe.com (2606:4700:90d1:d424:1f9e:2c:6ae4:7e4e) port 443 (#0)
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: C:\xampp\apache\bin\curl-ca-bundle.crt
+*  CApath: none
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: CN=*.phonepe.com
+*  start date: Jun  4 10:20:38 2025 GMT
+*  expire date: Jun  4 10:20:38 2026 GMT
+*  subjectAltName: host "api-preprod.phonepe.com" matched cert's "*.phonepe.com"
+*  issuer: C=US; ST=Arizona; L=Scottsdale; O=GoDaddy.com, Inc.; OU=http://certs.godaddy.com/repository/; CN=Go Daddy Secure Certificate Authority - G2
+*  SSL certificate verify ok.
+> POST /apis/pg-sandbox/pg/v1/pay HTTP/1.1
+Host: api-preprod.phonepe.com
+Content-Type: application/json
+X-VERIFY: 671f83bbc085cf067ce002f892cbb8a40c3247a8ab5515d2494470d2b353a8de###1
+accept: application/json
+Content-Length: 438
+
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 400 Bad Request
+< Date: Sun, 03 Aug 2025 18:22:01 GMT
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< x-requested-method: POST
+< access-control-allow-origin: *
+< access-control-allow-headers: Cache-Control,If-Modified-Since,Pragma,Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin, X-VERIFY, X-MERCHANT-ID, X-CALLBACK-URL, checkouttype, x-app-package-name, x-request-env, x-auth-token, x-browser-fingerprint, x-client, x-client-major-version, x-client-name, x-client-subtype, x-client-type, x-client-version, x-device-type, x-encrypted, x-merchant-domain, x-source, x-source-channel, x-source-channel-version, x-source-integration-mode
+< access-control-allow-methods: OPTIONS,GET,PUT,POST,DELETE,HEAD
+< x-response-backend-time: 1754245321962
+< x-request-backend-time: 1754245321932
+< x-frame-options: DENY
+< x-content-type-options: nosniff
+< x-xss-protection: 1; mode=block
+< strict-transport-security: max-age=0; includeSubDomains; preload
+< cf-cache-status: DYNAMIC
+< Server: cloudflare
+< CF-RAY: 9697d68dd819493c-BOM
+< 
+* Connection #0 to host api-preprod.phonepe.com left intact
+
+[03-Aug-2025 20:22:00 Europe/Berlin] Response Code: 400
+[03-Aug-2025 20:22:00 Europe/Berlin] Response: {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}
+[03-Aug-2025 20:22:00 Europe/Berlin] cURL Error: None
+[03-Aug-2025 20:22:00 Europe/Berlin] Payment Error: API request failed with status: 400. Response: {"success":false,"code":"KEY_NOT_CONFIGURED","message":"Key not found for the merchant","data":{}}

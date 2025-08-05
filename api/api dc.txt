@@ -1,0 +1,243 @@
+               
+// API URL
+$url = "https://jazainc.com/api/v2/llexam/doexam.php"; 
+
+// POST data
+$data = array(
+    "apikey" => "eb4f7976f79c67a19f95a259d9254446", // Replace with your Api Key 
+    "applno" => "APPL_NO",
+    "dob" => "DATE_OF_BIRTH",
+    "pass" => "PASSWORD",
+    "pin" => "EXAM_PIN", // Optional
+    "type" => "TYPE", // 1) day for Day Exam 2) night for Quota Limit Exams
+    "callback" => "https://jkdigitalcenter.in/callbackexam.php" //This url will be executed to auto update data in your database
+);
+
+// NOTE: CALLBACK URL SHOULD BE CREATED HAVING GET PARAMETER token IN CODE AS WE WILL EXECUTE YOUR CALL BACK WITHIN token AS GET PARAMETER
+// ALSO CALLBACK SHOULD NOT HAVE SESSION CHECKING RESTRICTION, IF SO THEN IT WILL NOT GET EXECUTED AND STATUS WILL NOT GET AUTO UPDATED
+
+$ch = curl_init();
+
+
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+
+
+$response = curl_exec($ch);
+
+// Close cURL
+curl_close($ch);
+
+
+ 
+                
+            
+
+
+require_once("../config/function.php");
+$config = "../config/config.php";
+include $config;
+
+
+  $token = $_REQUEST["token"];
+  
+$sql = "SELECT USERNAME FROM LLEXAM WHERE TOKEN='$token'";
+             $data = mysqli_query($mysqli_conn,$sql);
+             $res = mysqli_fetch_assoc($data);
+    
+  $checkuser = $res["USERNAME"];
+
+    
+      $sql = "SELECT TYPE FROM LLEXAM WHERE TOKEN='$token'";
+             $data = mysqli_query($mysqli_conn,$sql);
+             $res = mysqli_fetch_assoc($data);
+             
+             $gettype = $res["TYPE"];
+             if($gettype=="day")
+             {
+                 $typeprice = "ll_apply_fee";
+             }
+               if($gettype=="night")
+             {
+                 $typeprice = "ll_apply_fee_night";
+             }
+             
+    $sql = "SELECT username,$typeprice,balance,user_id,parent_id,site_id FROM members WHERE username='$checkuser'";
+$data = mysqli_query($mysqli_conn,$sql);
+$res = mysqli_fetch_assoc($data);
+
+$gotusername = $res["username"];
+$gotprice = $res[$typeprice];
+$bal = $res["balance"];
+$new_bal = $bal+$gotprice;
+
+$siteid = $res["site_id"];
+$userid = $res["user_id"];
+$parentid = $res["parent_id"];
+    
+    
+             $sql = "SELECT STATUS FROM LLEXAM WHERE TOKEN='$token'";
+             $data = mysqli_query($mysqli_conn,$sql);
+             $res = mysqli_fetch_assoc($data);
+             
+             $getstatus = $res["STATUS"];
+             
+             if($getstatus=="")
+             {
+                 $response = array(
+        "status"=>"404",
+        "message"=>"Token not found !"
+        );
+        echo json_encode($response);
+             }
+             elseif($getstatus=="300")
+             {
+                 $response = array(
+        "status"=>"404",
+        "message"=>"Unauthorised access detected  !"
+        );
+        echo json_encode($response);
+             }
+             else
+             {
+                 
+             
+                 
+                 
+             
+// API URL
+$url = "https://jazainc.com/api/v2/llexam/checkexam.php"; 
+
+// POST data
+$data = array(
+    "token"=>$token // 1) type1 for Blue Format 2) type2 for Latest Format
+  
+);
+
+
+$ch = curl_init();
+
+
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+
+
+$response = curl_exec($ch);
+$response = trim($response);
+// Close cURL
+curl_close($ch);
+
+// OPTIONAL FOR YOUR GUIDE
+if($response !== false){
+      $decoded_data = json_decode($response,true);
+    
+        
+    
+    $status = $decoded_data["status"];
+    $message = $decoded_data["message"];
+    $remarks_exam = $decoded_data["remarks"];
+    $filename = $decoded_data["filename"];
+    $queuenumber = $decoded_data["queue"];
+    if($status=="500")
+    {
+        
+        $sql = "UPDATE LLEXAM SET REMARKS='$remarks_exam',QUEUE='$queuenumber' WHERE TOKEN='$token'";
+                 $data = mysqli_query($mysqli_conn,$sql);
+                 if($data)
+                 {
+                      $response = array(
+        "status"=>"404",
+        "message"=>$message
+        );
+          echo json_encode($response);
+                 }
+        
+       
+    }
+     elseif($status=="404")
+    {
+        
+        
+        
+        $response = array(
+        "status"=>"404",
+        "message"=>$message
+        );
+          echo json_encode($response);
+    }
+    elseif($status=="300")
+    {
+        
+        
+        
+       date_default_timezone_set("Asia/Kolkata");
+        $datenew = date("Y-m-d H:i:s");
+        $orderid = order_txn_id();
+        $description_new = "Rs ".$gotprice." has been credited as refund to your wallet.";
+        
+        $sql = "INSERT INTO `reports`(`site_id`, `user_id`, `username`, `parent_id`, `order_id`, `service`, `type`, `account_number`, `operator`, `name`, `app_type`, `amount`, `main_amount`, `old_balance`, `new_balance`, `txn_id`, `ref_id`, `description`, `date_time`, `dispute`, `dispute_auto`, `dispute_id`, `api_response`, `status`) VALUES ('$siteid','$userid','$gotusername','$parentid','$orderid','LL Exam','Credit','$gotusername','Retailer','Prod','','$gotprice','$gotprice','$bal','$new_bal','$orderid','$token','$description_new','$datenew','','','','','Success')";
+        $data = mysqli_query($mysqli_conn,$sql);
+        if($data)
+        {
+            
+            $sql = "UPDATE members SET balance='$new_bal' WHERE username='$gotusername'";
+            $data = mysqli_query($mysqli_conn,$sql); 
+             
+             
+        
+             
+            $sql = "UPDATE LLEXAM SET STATUS='300',REMARKS='$message',QUEUE='' WHERE TOKEN='$token'";
+                $data = mysqli_query($mysqli_conn,$sql);
+                
+                
+             
+                 
+                      
+                if($data)
+                {
+                      $response = array(
+        "status"=>"404",
+        "message"=>"Your exam with token number ".$token." has been refuded.<br>Reason : ".$message
+        );
+          echo json_encode($response);
+                }
+                 
+            
+        
+        
+    }
+    }
+    elseif($status=="200")
+    {
+         $sql = "UPDATE LLEXAM SET STATUS='200',REMARKS='$remarks_exam',QUEUE='' WHERE TOKEN='$token'";
+                 $data = mysqli_query($mysqli_conn,$sql);
+                 if($data)
+                 {
+                      $response = array(
+        "status"=>"200",
+         "filename"=>$filename,
+        "message"=>$message,
+       
+        );
+          echo json_encode($response);
+                 }
+                 
+    }
+    
+}
+else
+{
+    
+    
+}
+    
+
+}
+      
+            

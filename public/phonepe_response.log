@@ -1,0 +1,28 @@
+2025-07-26 01:09:13 - Status: 404
+Response: {"success":false,"code":"404"}
+Error: None
+
+2025-07-26 01:14:36 - Status: 404
+Request URL: https://api.phonepe.com/apis/hermes/pg/v1/pay
+Headers Sent: Array
+(
+    [0] => Content-Type: application/json
+    [1] => X-VERIFY: 8efe0696db96833a24f9fb64d2380009897dc17e7d033ec66f776a6b4fb0e511###1
+    [2] => accept: application/json
+)
+
+Response: {"success":false,"code":"404"}
+Error: None
+
+2025-07-26 01:15:01 - Status: 404
+Request URL: https://api.phonepe.com/apis/hermes/pg/v1/pay
+Headers Sent: Array
+(
+    [0] => Content-Type: application/json
+    [1] => X-VERIFY: 01acd31ec5ad0b7d8812a2dd5ef9f8e820ffdb14b5c34636a1f15b66aff322fc###1
+    [2] => accept: application/json
+)
+
+Response: {"success":false,"code":"404"}
+Error: None
+
