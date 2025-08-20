@@ -1,19 +1,3 @@
-// index.js - Handles login logic for user and admin
-
-function showTab(tab) {
-    document.getElementById('userTab').classList.remove('active');
-    document.getElementById('adminTab').classList.remove('active');
-    document.getElementById('userForm').style.display = 'none';
-    document.getElementById('adminForm').style.display = 'none';
-    if (tab === 'user') {
-        document.getElementById('userTab').classList.add('active');
-        document.getElementById('userForm').style.display = '';
-    } else {
-        document.getElementById('adminTab').classList.add('active');
-        document.getElementById('adminForm').style.display = '';
-    }
-}
-
 async function loginUser(event) {
     event.preventDefault();
     document.getElementById('userError').textContent = '';
@@ -86,4 +70,4 @@ async function loginAdmin(event) {
         document.getElementById('adminError').textContent = 'Network/server error.';
     }
     return false;
-} 
+}

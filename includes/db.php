@@ -5,7 +5,7 @@
 $host = 'localhost';
 $db   = 'servicehub1';
 $user = 'root';
-$pass = ''; // Your MySQL password, if any
+$pass = '';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;port=3306;dbname=$db;charset=$charset";

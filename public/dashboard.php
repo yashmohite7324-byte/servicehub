@@ -1,14 +1,14 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-    header('Location: login.php');
+    header('Location: index.php');
     exit;
 }
 
 require_once __DIR__ . '/../includes/db.php';
 
 try {
-    $stmt = $pdo->prepare("SELECT wallet_balance, llr_price, dl_price, rc_price FROM users WHERE id = ?");
+    $stmt = $pdo->prepare("SELECT wallet_balance, llr_price, dl_price, rc_price, dl_update_price FROM users WHERE id = ?");
     $stmt->execute([$_SESSION['user']['id']]);
     $currentData = $stmt->fetch(PDO::FETCH_ASSOC);
     
@@ -21,6 +21,8 @@ try {
     $user['llr_price'] = $user['llr_price'] ?? 100.00;
     $user['dl_price'] = $user['dl_price'] ?? 150.00;
     $user['rc_price'] = $user['rc_price'] ?? 200.00;
+    $user['dl_update_price'] = $user['dl_update_price'] ?? 100.00;
+    
 }
 ?>
 <!DOCTYPE html>
@@ -220,7 +222,7 @@ try {
                                 <h2 class="fw-bold mb-0">₹<?= number_format($user['wallet_balance'], 2) ?></h2>
                             </div>
                             <div class="col-md-4 text-md-end mt-2 mt-md-0">
-                                <a href="add_money.php" class="btn btn-light btn-sm">
+                                <a href="maintain.php" class="btn btn-light btn-sm">
                                     <i class="bi bi-plus-circle me-1"></i> Add Money
                                 </a>
                             </div>
@@ -235,7 +237,7 @@ try {
         <div class="row g-3">
             <!-- LLR Exam Card -->
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="llr_exam.php" class="text-decoration-none">
+                <a href="./llr token/llr_exam.php" class="text-decoration-none">
                     <div class="card card-service h-100 service-card-llr">
                         <div class="card-body py-3 text-center">
                             <div class="service-icon">
@@ -257,7 +259,7 @@ try {
 
             <!-- DL PDF Card -->
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="dl_pdf.php" class="text-decoration-none">
+                <a href="./DL_pdf/dl_pdf.php" class="text-decoration-none">
                     <div class="card card-service h-100 service-card-dl">
                         <div class="card-body py-3 text-center">
                             <div class="service-icon">
@@ -277,9 +279,31 @@ try {
                 </a>
             </div>
 
-            <!-- RC PDF Card -->
+            <!-- DL NUMBER UPDATE -->
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="rc_pdf.php" class="text-decoration-none">
+                <a href="./DL_no_update/dl_update.php" class="text-decoration-none">
+                    <div class="card card-service h-100 service-card-rc">
+                        <div class="card-body py-3 text-center">
+                            <div class="service-icon">
+                                <i class="bi bi-file-earmark-break"></i>
+                            </div>
+                            <h4 class="card-title">DL NO UPDATE</h4>
+                            <div class="service-price">
+                                ₹<?= number_format($user['dl_update_price'], 2) ?>
+                                <small>Service Fee</small>
+                            </div>
+                            <p class="card-text mb-3">Download Registration Certificate PDF</p>
+                            <button class="btn btn-service">
+                                <i class="bi bi-arrow-right me-1"></i> Get Started
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- RC PDF Card -->
+            <!-- <div class="col-12 col-md-6 col-lg-4">
+                <a href="maintain.php" class="text-decoration-none">
                     <div class="card card-service h-100 service-card-rc">
                         <div class="card-body py-3 text-center">
                             <div class="service-icon">
@@ -297,7 +321,7 @@ try {
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
         </div>
     </div>
 

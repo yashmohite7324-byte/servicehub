@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $admin = $stmt->fetch();
         if ($admin) {
             $_SESSION['admin'] = $admin;
-            header('Location: admin_dashboard.php');
+            header('Location: ./admin/admin_dashboard.php');
             exit;
         } else {
             $error = 'Invalid credentials.';

@@ -10,7 +10,7 @@ if (!isset($_SESSION['user'])) {
 }
 
 try {
-    $stmt = $pdo->prepare('SELECT wallet_balance, llr_price, dl_price, rc_price FROM users WHERE id = ?');
+    $stmt = $pdo->prepare('SELECT wallet_balance, llr_price, dl_price, rc_price,dl_update_price FROM users WHERE id = ?');
     $stmt->execute([$_SESSION['user']['id']]);
     $currentData = $stmt->fetch(PDO::FETCH_ASSOC);
     

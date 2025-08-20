@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '/../includes/admin_auth.php';
+require_once __DIR__ . '/../../includes/admin_auth.php';
 require_admin_login();
-require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/../../includes/db.php';
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name'] ?? '');
@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

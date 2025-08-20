@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ServiceHub - User Login</title>
+    <title>Services - ServiceHub</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary: #4361ee;
@@ -86,122 +87,68 @@
             justify-content: center;
             align-items: center;
             padding: 40px 20px;
+            text-align: center;
         }
         
-        .container {
-            width: 100%;
-            max-width: 420px;
+        .maintenance-container {
+            max-width: 600px;
             background: white;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            animation: fadeIn 0.5s ease;
+            padding: 50px;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        h2 {
-            color: var(--dark);
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 500;
-            font-size: 1.5rem;
-        }
-        
-        .form-group {
+        .maintenance-icon {
+            font-size: 4rem;
+            color: var(--warning);
             margin-bottom: 20px;
         }
         
-        label {
-            display: block;
-            margin-bottom: 8px;
+        .maintenance-container h2 {
             color: var(--dark);
-            font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 2rem;
+            margin-bottom: 15px;
         }
         
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-        
-        input[type="text"]:focus,
-        input[type="password"]:focus {
-            border-color: var(--primary-light);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
-        }
-        
-        button {
-            width: 100%;
-            padding: 14px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-        
-        button:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
-        }
-        
-        button:disabled {
-            background: var(--gray);
-            transform: none;
-            box-shadow: none;
-            cursor: not-allowed;
-        }
-        
-        .error {
-            color: var(--danger);
-            margin: 15px 0;
-            text-align: center;
-            font-size: 0.9rem;
-            padding: 10px;
-            background: rgba(247, 37, 133, 0.1);
-            border-radius: 6px;
-        }
-        
-        .success {
-            color: var(--success);
-            margin: 15px 0;
-            text-align: center;
-            font-size: 0.9rem;
-            padding: 10px;
-            background: rgba(76, 201, 240, 0.1);
-            border-radius: 6px;
-        }
-        
-        .switch-link {
-            text-align: center;
-            margin-top: 25px;
+        .maintenance-container p {
             color: var(--dark);
-            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
         
-        .switch-link a {
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            width: 65%;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            border-radius: 4px;
+            animation: progress 2s ease-in-out infinite;
+        }
+        
+        @keyframes progress {
+            0% { width: 65%; }
+            50% { width: 75%; }
+            100% { width: 65%; }
+        }
+        
+        .contact-link {
+            display: inline-block;
             color: var(--primary);
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
         }
         
-        .switch-link a:hover {
+        .contact-link:hover {
             color: var(--secondary);
             text-decoration: underline;
         }
@@ -228,14 +175,26 @@
             nav ul li {
                 margin: 0 10px;
             }
+            
+            .maintenance-container {
+                padding: 40px 30px;
+            }
         }
 
         @media (max-width: 480px) {
-            .container {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .maintenance-container {
                 padding: 30px 20px;
             }
             
-            .logo h1 {
+            .maintenance-icon {
+                font-size: 3rem;
+            }
+            
+            .maintenance-container h2 {
                 font-size: 1.5rem;
             }
         }
@@ -258,33 +217,23 @@
     </header>
 
     <div class="main-content">
-        <div class="container">
-            <h2>User Login</h2>
+        <div class="maintenance-container">
+            <div class="maintenance-icon">
+                <i class="fas fa-tools"></i>
+            </div>
+            <h2>Under Maintenance</h2>
+            <p>We're currently working hard to improve our services page. Please check back soon for exciting updates and new features!</p>
             
-            <form onsubmit="return loginUser(event)">
-                <div class="form-group">
-                    <label for="userMobile">Mobile Number</label>
-                    <input type="text" id="userMobile" maxlength="10" placeholder="Enter 10-digit mobile number" required />
-                </div>
-                
-                <div class="form-group">
-                    <label for="userPassword">Password</label>
-                    <input type="password" id="userPassword" placeholder="Enter your password" required />
-                </div>
-                
-                <div class="error" id="userError"></div>
-                <div class="success" id="userSuccess"></div>
-                
-                <button type="submit">Login</button>
-                
-            </form>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            
+            <p>In the meantime, feel free to <a href="contact.html" class="contact-link">contact us</a> if you need any assistance.</p>
         </div>
     </div>
     
     <footer>
         &copy; 2023 ServiceHub. All rights reserved.
     </footer>
-    
-    <script src="index.js"></script>
 </body>
 </html>

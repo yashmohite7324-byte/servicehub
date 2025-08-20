@@ -1,0 +1,32 @@
+[14-Aug-2025 12:24:38 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 40
+[14-Aug-2025 12:24:38 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 40
+[14-Aug-2025 12:24:38 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 42
+[14-Aug-2025 12:24:38 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 42
+[14-Aug-2025 12:24:38 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 46
+[14-Aug-2025 12:24:38 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 46
+[14-Aug-2025 12:24:38 Europe/Berlin] Payment Error: Payment gateway connection failed. Status: 0
+[14-Aug-2025 12:24:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 40
+[14-Aug-2025 12:24:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 40
+[14-Aug-2025 12:24:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 42
+[14-Aug-2025 12:24:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 42
+[14-Aug-2025 12:24:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 46
+[14-Aug-2025 12:24:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 46
+[14-Aug-2025 12:24:46 Europe/Berlin] Payment Error: Payment gateway connection failed. Status: 0
+[14-Aug-2025 12:33:54 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 57
+[14-Aug-2025 12:33:54 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 57
+[14-Aug-2025 12:33:54 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 59
+[14-Aug-2025 12:33:54 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 59
+[14-Aug-2025 12:33:54 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 68
+[14-Aug-2025 12:33:54 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 68
+[14-Aug-2025 12:33:59 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 57
+[14-Aug-2025 12:33:59 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 57
+[14-Aug-2025 12:33:59 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 59
+[14-Aug-2025 12:33:59 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 59
+[14-Aug-2025 12:33:59 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 68
+[14-Aug-2025 12:33:59 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 68
+[14-Aug-2025 12:34:05 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 57
+[14-Aug-2025 12:34:05 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 57
+[14-Aug-2025 12:34:05 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 59
+[14-Aug-2025 12:34:05 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 59
+[14-Aug-2025 12:34:05 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 68
+[14-Aug-2025 12:34:05 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Clone\public\jazapay_initiate.php on line 68
