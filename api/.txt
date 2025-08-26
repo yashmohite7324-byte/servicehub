@@ -1,0 +1,185 @@
+Payment Gateway Docs :
+
+               
+// API URL
+$url = "https://jazainc.com/api/v2/pg/orders/pg-create-order.php"; 
+
+// POST data
+$data = array(
+    "apikey" => "72ba3bd0183631753f45720bf6a2a5a5", // Replace with your Api Key 
+    "amt" => "AMOUNT",
+    "callback" => "https://jkdigitalcenter.in/callbackexam.php" //This url will be executed to auto update data in your database
+);
+
+// NOTE: CALLBACK URL SHOULD BE CREATED HAVING GET PARAMETER token IN CODE AS WE WILL EXECUTE YOUR CALL BACK WITHIN token AS GET PARAMETER
+// ALSO CALLBACK SHOULD NOT HAVE SESSION CHECKING RESTRICTION, IF SO THEN IT WILL NOT GET EXECUTED AND STATUS WILL NOT GET AUTO UPDATED
+
+$ch = curl_init();
+
+
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+
+
+$response = curl_exec($ch);
+
+// Close cURL
+curl_close($ch);
+
+
+ 
+                
+     // SUCCESS RESPONSE
+     
+                  {
+                  "status":"200",
+                 "message":"Transaction created successfully",
+                 "txnid":"PGTXN_17454554454",
+                 "payUrl":"https://jazainc.com/api/v2/pg/82260071752891402133"
+               
+                  }
+                  
+     // ERROR RESPONSE
+     
+                  {
+                  "status":"404",
+                  "message":"Something went wrong. Please try again",
+                  }
+                  
+
+Transaction Status Check Docs :
+
+               
+// API URL
+$url = "https://jazainc.com/api/v2/pg/orders/pg-order-status.php"; 
+
+// POST data
+$data = array(
+   "txnid" => "TXN_ID" // This is transaction id while initiating transaction
+);
+
+
+
+$ch = curl_init();
+
+
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+
+
+$response = curl_exec($ch);
+
+// Close cURL
+curl_close($ch);
+
+
+ 
+                
+        // SUCCESS RESPONSE IF UNDER PROCESS
+     
+                  {
+                  "status" : "500",
+        "message" : "Your transaction is not yet completed",
+        "queue" : "QUEUE #11",
+        "remarks" : "Assigned or Exam Ongoing etc"
+                  }
+    // SUCCESS RESPONSE IF ERROR
+     
+                  {
+                  "status" : "404",
+        "message" : "Error message",
+        
+                  }
+    // SUCCESS RESPONSE IF SUCCESSFULLY COMPLETED
+     
+                  {
+                  "status" : "200",
+         "utrid" : "45454545",
+     
+        }
+    
+                  
+CALL BACK URL SAMPLE FORMAT :
+
+               
+include('../includes/session.php');
+include('../includes/config.php');
+
+
+
+$txnid = $_REQUEST["txnid"];
+$jsAlert = ''; // to hold the SweetAlert script
+
+$sql = mysqli_fetch_assoc(mysqli_query($ahk_conn,"SELECT * FROM wallet WHERE txn_id='$txnid'"));
+$gettxn = $sql["txn_id"];
+$userid = $sql["phone"];
+$status = $sql["status"];
+
+if ($gettxn == "") {
+    $jsAlert = "Swal.fire('Error !', 'Data not found !', 'error');";
+} elseif ($status == "success") {
+    $jsAlert = "Swal.fire('Error !', 'Transaction is already verified !', 'error');";
+} else {
+    $bal = mysqli_fetch_assoc(mysqli_query($ahk_conn,"SELECT * FROM users WHERE phone='$userid'"));
+    $balance = $bal["balance"];
+
+                  
+// API URL
+$url = "https://jazainc.com/api/v2/pg/orders/pg-order-status.php?txnid=$txnid"; 
+
+
+
+
+$response = file_get_contents($url);
+
+// Close cURL
+curl_close($ch);
+
+
+ 
+                
+            
+    if ($response) {
+        $enc = json_decode($response, true);
+        $status = $enc["status"];
+        $msg = $enc["message"];
+        $amt = $enc["amt"];
+        $utr = $enc["utrid"];
+        $newbal = $balance + $amt;
+
+        if ($status == "200") {
+            $upd = mysqli_query($ahk_conn,"UPDATE wallet SET RESPMSG='$msg',BANKTXNID='$utr',status='success' WHERE txn_id='$txnid'");
+            if ($upd) {
+                $ins = mysqli_query($ahk_conn,"INSERT INTO wallethistory(userid,amount,balance,purpose,status,type) VALUES('$userid','$amt','$newbal','deposit','1','credit')");
+                if ($ins) {
+                    $updbal = mysqli_query($ahk_conn,"UPDATE users SET balance='$newbal' WHERE phone='$userid'");
+                    if ($updbal) {
+                        $jsAlert = "Swal.fire('Success !', '$msg', 'success'); setTimeout(() => { window.location.href = 'wallet.php'; }, 1000);";
+                    } else {
+                        $jsAlert = "Swal.fire('Error !', 'Balance update error !', 'error');";
+                    }
+                } else {
+                    $jsAlert = "Swal.fire('Error !', 'Wallet history error !', 'error');";
+                }
+            } else {
+                $jsAlert = "Swal.fire('Error !', 'Wallet update error !', 'error');";
+            }
+        } else {
+            $jsAlert = "Swal.fire('Error !', '$msg', 'error');";
+        }
+    } else {
+        $jsAlert = "Swal.fire('Error !', 'Payment gateway error !', 'error');";
+    }
+}
+
+// Hanlde $jsAlert values in html programming
+
+
+
+            

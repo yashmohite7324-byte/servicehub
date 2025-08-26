@@ -16,34 +16,6 @@ $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $walletBalance = $userData['wallet_balance'] ?? 0;
 $llrPrice = $userData['llr_price'] ?? 100;
-
-// Calculate exam availability
-$currentTime = time();
-$startTime = strtotime('8:00 AM');
-$endTime = strtotime('11:00 PM');
-$isExamTime = ($currentTime >= $startTime && $currentTime <= $endTime);
-
-// Calculate time until next exam session
-if ($currentTime < $startTime) {
-    // Before exam hours - count down to 8 AM
-    $timeUntilNext = $startTime - $currentTime;
-} elseif ($currentTime > $endTime) {
-    // After exam hours - count down to next day 8 AM
-    $timeUntilNext = ($startTime + 86400) - $currentTime;
-} else {
-    // During exam hours
-    $timeUntilNext = 0;
-}
-
-// Format time for display
-if ($timeUntilNext > 0) {
-    $hours = floor($timeUntilNext / 3600);
-    $minutes = floor(($timeUntilNext % 3600) / 60);
-    $seconds = $timeUntilNext % 60;
-    $countdownDisplay = sprintf("%02d:%02d:%02d", $hours, $minutes, $seconds);
-} else {
-    $countdownDisplay = "00:00:00";
-}
 ?>
 
 <!DOCTYPE html>
@@ -605,6 +577,7 @@ if ($timeUntilNext > 0) {
             }
         }
     </style>
+    </style>
 </head>
 <body>
     <!-- Back Button -->
@@ -622,23 +595,6 @@ if ($timeUntilNext > 0) {
     <div class="container main-container">
         <div class="row justify-content-center">
             <div class="col-12">
-                <!-- Exam Timer -->
-                <!-- <div class="exam-timer-container">
-                    <div class="timer-title">
-                        <i class="bi bi-clock me-2"></i>LLR Exam Availability
-                    </div>
-                    <div class="countdown-timer" id="countdownTimer">
-                        <?= $countdownDisplay ?>
-                    </div>
-                    <div class="exam-status <?= $isExamTime ? 'status-available' : 'status-unavailable' ?>" id="examStatus">
-                        <?= $isExamTime ? 'Exams are currently available' : 'Exams will be available in' ?>
-                    </div>
-                    <div class="exam-hours">
-                        <i class="bi bi-info-circle me-1"></i>
-                        Exam hours: 8:00 AM to 11:00 PM
-                    </div>
-                </div> -->
-                
                 <!-- Wallet Balance -->
                 <div class="wallet-info">
                     <div class="row">
@@ -671,9 +627,9 @@ if ($timeUntilNext > 0) {
                         </h3>
                         <p class="mb-0 mt-2">Enter your details to start the exam</p>
                         <div class="exam-hours" style="color:rgb(255, 255, 255)">
-                        <i class="bi bi-info-circle me-1"></i>
-                        <b>Exam hours: 8:00 AM to 11:00 PM</b>
-                    </div>
+                            <i class="bi bi-info-circle me-1"></i>
+                            <b>Exam hours: 8:00 AM to 11:00 PM</b>
+                        </div>
                     </div>
                     <div class="form-body">
                         <form id="llrForm">
@@ -682,7 +638,7 @@ if ($timeUntilNext > 0) {
                                     <i class="bi bi-card-text me-2"></i>Application Number
                                 </label>
                                 <input type="text" class="form-control" id="applno" name="applno" required 
-                                       placeholder="Enter your application number" maxlength="20" <?= !$isExamTime ? 'disabled' : '' ?>>
+                                       placeholder="Enter your application number" maxlength="20">
                             </div>
                             
                             <div class="form-group">
@@ -690,7 +646,7 @@ if ($timeUntilNext > 0) {
                                     <i class="bi bi-calendar me-2"></i>Date of Birth (DD-MM-YYYY)
                                 </label>
                                 <input type="text" class="form-control" id="dob" name="dob" required 
-                                       placeholder="Enter your date of birth in DD-MM-YYYY format" <?= !$isExamTime ? 'disabled' : '' ?>>
+                                       placeholder="Enter your date of birth in DD-MM-YYYY format">
                             </div>
                             
                             <div class="form-group">
@@ -698,7 +654,7 @@ if ($timeUntilNext > 0) {
                                     <i class="bi bi-lock me-2"></i>Password
                                 </label>
                                 <input type="text" class="form-control" id="password" name="password" required 
-                                       placeholder="Enter your password" <?= !$isExamTime ? 'disabled' : '' ?>>
+                                       placeholder="Enter your password">
                                 <small class="form-text text-muted">
                                     <i class="bi bi-info-circle me-1"></i>
                                     This is the password you used when applying for LLR
@@ -710,11 +666,11 @@ if ($timeUntilNext > 0) {
                                     <i class="bi bi-pin me-2"></i>Exam PIN (Optional)
                                 </label>
                                 <input type="text" class="form-control" id="exam_pin" name="exam_pin" 
-                                       placeholder="Enter exam PIN if required" <?= !$isExamTime ? 'disabled' : '' ?>>
+                                       placeholder="Enter exam PIN if required">
                             </div>
                             
                             <div class="d-grid mt-4">
-                                <button type="submit" class="btn btn-submit text-white btn-lg" id="submitBtn" <?= !$isExamTime ? 'disabled' : '' ?>>
+                                <button type="submit" class="btn btn-submit text-white btn-lg" id="submitBtn">
                                     <i class="bi bi-send-fill me-2"></i>
                                     START LLR EXAM (₹<?= number_format($llrPrice, 2) ?>)
                                 </button>
@@ -819,17 +775,12 @@ if ($timeUntilNext > 0) {
             user: {
                 balance: <?= $walletBalance ?>,
                 llrPrice: <?= $llrPrice ?>
-            },
-            examTimes: {
-                start: 8, // 8 AM
-                end: 23   // 11 PM
             }
         };
 
         let refreshTimer;
         let statusCheckTimer;
         let currentFilter = 'all';
-        let timeUntilNext = <?= $timeUntilNext ?>;
 
         // Initialize when DOM is ready
         $(document).ready(function() {
@@ -838,41 +789,7 @@ if ($timeUntilNext > 0) {
             loadApplications();
             startAutoRefresh();
             startStatusChecking();
-            
-            // Start countdown if needed
-            if (timeUntilNext > 0) {
-                startCountdown();
-            }
         });
-
-        function startCountdown() {
-            const countdownElement = $('#countdownTimer');
-            const examStatusElement = $('#examStatus');
-            
-            const countdownInterval = setInterval(function() {
-                timeUntilNext--;
-                
-                if (timeUntilNext <= 0) {
-                    clearInterval(countdownInterval);
-                    countdownElement.text('00:00:00');
-                    examStatusElement.removeClass('status-unavailable').addClass('status-available').text('Exams are currently available');
-                    
-                    // Enable form inputs
-                    $('#applno, #dob, #password, #exam_pin, #submitBtn').prop('disabled', false);
-                    
-                    return;
-                }
-                
-                // Format the time
-                const hours = Math.floor(timeUntilNext / 3600);
-                const minutes = Math.floor((timeUntilNext % 3600) / 60);
-                const seconds = timeUntilNext % 60;
-                
-                countdownElement.text(
-                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
-                );
-            }, 1000);
-        }
 
         function setupToastr() {
             toastr.options = {
@@ -887,27 +804,12 @@ if ($timeUntilNext > 0) {
             // Form submission
             $('#llrForm').on('submit', function(e) {
                 e.preventDefault();
-                
-                // Check if it's exam time
-                const now = new Date();
-                const currentHour = now.getHours();
-                
-                if (currentHour < config.examTimes.start || currentHour >= config.examTimes.end) {
-                    toastr.error('Exams are only available between 8:00 AM and 11:00 PM');
-                    return;
-                }
-                
                 submitApplication();
             });
 
             // Refresh button
             $('#refreshAllBtn').click(function() {
                 refreshAllStatuses();
-            });
-
-            // Back button
-            $('#backButton').click(function() {
-                window.location.href = 'dashboard.php';
             });
 
             // Filter buttons
@@ -1148,7 +1050,7 @@ if ($timeUntilNext > 0) {
                         filterApplications();
                         
                         // Update last refresh time
-                        $('#lastUpdateTime').text('Updated: ' + new Date().toLocaleTimeString());
+                        $('#lastUpdateTime').text('Updated: ' + new Date().toLocaleTimeString('en-IN'));
                 } else {
                     toastr.error(data.message || 'Failed to load applications');
                 }
@@ -1232,7 +1134,7 @@ if ($timeUntilNext > 0) {
                     return `
                         <div class="live-indicator">
                             <i class="bi bi-x-circle-fill text-danger"></i>
-                            <span class="text-danger fw-bold">Refunded</span>
+                            <span class="text-danger fw-bold>Refunded</span>
                             <div class="queue-info text-danger">Amount refunded</div>
                         </div>
                     `;
@@ -1247,11 +1149,21 @@ if ($timeUntilNext > 0) {
             }
         }
 
-        function formatDateTime(dateString) {
-            if (!dateString) return '';
-            const date = new Date(dateString);
-            return date.toLocaleString('en-IN');
-        }
+       function formatDateTime(dateString) {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    
+    // Format to Indian date and 24-hour time format
+    return date.toLocaleString('en-IN', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false // This is the key change - forces 24-hour format
+    });
+}
 
         function refreshAllStatuses() {
             if ($('#refreshAllBtn').prop('disabled')) return;
@@ -1271,7 +1183,7 @@ if ($timeUntilNext > 0) {
             refreshTimer = setInterval(() => {
                 if (document.visibilityState === 'visible') {
                     loadApplications();
-                    $('#updateIndicator').text('Updated: ' + new Date().toLocaleTimeString());
+                   $('#updateIndicator').text('Updated: ' + new Date().toLocaleTimeString('en-IN'));
                 }
             }, config.refreshInterval);
         }

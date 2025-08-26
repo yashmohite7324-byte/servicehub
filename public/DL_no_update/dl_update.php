@@ -1,4 +1,4 @@
-<!-- dl_updtae.php -->
+<!-- dl_update.php -->
 
 <?php
 session_start();
@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../includes/db.php';
 // Check user authentication
 $user = $_SESSION['user'] ?? null;
 if (!$user) {
-    header("Location: login.php");
+    header("Location: l../index.php");
     exit;
 }
 
@@ -17,7 +17,7 @@ $stmt->execute([$user['id']]);
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $walletBalance = $userData['wallet_balance'] ?? 0;
-$servicePrice = $userData['dl_update_price'] ?? 100; // Default price if not set
+$servicePrice = $userData['dl_update_price'] ?? 100;
 
 // Get user's DL update history
 $historyStmt = $pdo->prepare("
@@ -370,8 +370,7 @@ $updateHistory = $historyStmt->fetchAll(PDO::FETCH_ASSOC);
                                     <i class="bi bi-phone me-2"></i>Mobile Number
                                 </label>
                                 <input type="text" class="form-control" id="mobile" name="mobile" required 
-                                       placeholder="Enter your mobile number" maxlength="10" minlength="10"
-                                       value="<?= htmlspecialchars($user['mobile'] ?? '') ?>">
+                                       placeholder="Enter your mobile number" maxlength="10" minlength="10">
                             </div>
                             
                             <div class="d-grid mt-4">
@@ -429,6 +428,7 @@ $updateHistory = $historyStmt->fetchAll(PDO::FETCH_ASSOC);
                                             case 'processing': $statusClass = 'status-processing'; break;
                                             case 'completed': $statusClass = 'status-completed'; break;
                                             case 'rejected': $statusClass = 'status-rejected'; break;
+                                            case 'refund rejected': $statusClass = 'status-rejected'; break;
                                             default: $statusClass = 'status-pending';
                                         }
                                         ?>
@@ -529,6 +529,12 @@ $updateHistory = $historyStmt->fetchAll(PDO::FETCH_ASSOC);
                     success: function(response) {
                         if (response.success) {
                             toastr.success(response.message || 'DL update request submitted successfully');
+                            
+                            // Open WhatsApp link in a new tab if available
+                            if (response.whatsapp_link) {
+                                window.open(response.whatsapp_link, '_blank');
+                            }
+                            
                             setTimeout(() => {
                                 window.location.reload();
                             }, 2000);

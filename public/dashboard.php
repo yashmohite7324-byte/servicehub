@@ -7,22 +7,43 @@ if (!isset($_SESSION['user'])) {
 
 require_once __DIR__ . '/../includes/db.php';
 
+// Initialize user data with default values
+$userData = [
+    'wallet_balance' => 0.00,
+    'llr_price' => 100.00,
+    'dl_price' => 150.00,
+    'rc_price' => 200.00,
+    'dl_update_price' => 100.00,
+    'medical_price' => 70.00,
+    'name' => 'User'
+];
+
 try {
-    $stmt = $pdo->prepare("SELECT wallet_balance, llr_price, dl_price, rc_price, dl_update_price FROM users WHERE id = ?");
+    $stmt = $pdo->prepare("SELECT wallet_balance, llr_price, dl_price, rc_price, dl_update_price,medical_price FROM users WHERE id = ?");
     $stmt->execute([$_SESSION['user']['id']]);
     $currentData = $stmt->fetch(PDO::FETCH_ASSOC);
     
-    $_SESSION['user'] = array_merge($_SESSION['user'], $currentData);
-    $user = $_SESSION['user'];
+    if ($currentData) {
+        // Merge session data with database data
+        $_SESSION['user'] = array_merge($_SESSION['user'], $currentData);
+        $userData = array_merge($userData, $_SESSION['user']);
+    } else {
+        // Use session data if available
+        if (isset($_SESSION['user'])) {
+            $userData = array_merge($userData, $_SESSION['user']);
+        }
+    }
     
 } catch (PDOException $e) {
-    $user = $_SESSION['user'];
-    $user['wallet_balance'] = $user['wallet_balance'] ?? 0.00;
-    $user['llr_price'] = $user['llr_price'] ?? 100.00;
-    $user['dl_price'] = $user['dl_price'] ?? 150.00;
-    $user['rc_price'] = $user['rc_price'] ?? 200.00;
-    $user['dl_update_price'] = $user['dl_update_price'] ?? 100.00;
-    
+    // Use session data if available
+    if (isset($_SESSION['user'])) {
+        $userData = array_merge($userData, $_SESSION['user']);
+    }
+}
+
+// Ensure we have a name value
+if (!isset($userData['name'])) {
+    $userData['name'] = 'User';
 }
 ?>
 <!DOCTYPE html>
@@ -121,6 +142,7 @@ try {
         .btn-service {
             border: 2px solid rgba(255, 255, 255, 0.8);
             color: white;
+            background-color: black;
             font-weight: 600;
             transition: all 0.3s ease;
             padding: 0.5rem 1rem;
@@ -131,6 +153,37 @@ try {
             background-color: rgba(255, 255, 255, 0.1);
             border-color: white;
             color: white;
+        }
+        
+        /* Simple Marquee Styles */
+        .marquee-container {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+            border-radius: 0.35rem;
+            overflow: hidden;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            margin-bottom: 1.5rem;
+            padding: 0.75rem 0;
+            color: white;
+        }
+        
+        .marquee-content {
+            display: flex;
+            animation: marquee 20s linear infinite;
+            white-space: nowrap;
+        }
+        
+        .marquee-text {
+            padding-right: 2rem;
+            font-weight: 500;
+        }
+        
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
         
         /* Mobile-specific styles */
@@ -174,6 +227,10 @@ try {
             .service-price {
                 font-size: 1.1rem;
             }
+            
+            .marquee-text {
+                font-size: 0.85rem;
+            }
         }
         
         /* Tablet styles */
@@ -200,7 +257,7 @@ try {
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="d-flex align-items-center ms-auto">
-                    <span class="text-white me-3 welcome-text">Welcome, <?= htmlspecialchars($user['name'] ?? 'User') ?></span>
+                    <span class="text-white me-3 welcome-text">Welcome, <?= htmlspecialchars($userData['name']) ?></span>
                     <a href="logout.php" class="btn btn-outline-light btn-sm">
                         <i class="bi bi-box-arrow-right me-1"></i> Logout
                     </a>
@@ -219,16 +276,26 @@ try {
                         <div class="row align-items-center">
                             <div class="col-md-8">
                                 <h4 class="card-title mb-1"><i class="bi bi-wallet2 me-2"></i>Wallet Balance</h4>
-                                <h2 class="fw-bold mb-0">₹<?= number_format($user['wallet_balance'], 2) ?></h2>
+                                <h2 class="fw-bold mb-0">₹<?= number_format($userData['wallet_balance'], 2) ?></h2>
                             </div>
                             <div class="col-md-4 text-md-end mt-2 mt-md-0">
-                                <a href="maintain.php" class="btn btn-light btn-sm">
+                                <a href="./payment_token/add_money.php" class="btn btn-light btn-sm">
                                     <i class="bi bi-plus-circle me-1"></i> Add Money
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Simple Marquee -->
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <span class="marquee-text">🌟 DL Mobile Number Update Is live NOW 🌟</span>
+                <span class="marquee-text">🚀 Fast Processing: DL PDF delivered within 5 minute 🚀</span>
+                <span class="marquee-text"></span>
+                <span class="marquee-text"></span>
             </div>
         </div>
 
@@ -245,7 +312,7 @@ try {
                             </div>
                             <h4 class="card-title">LLR Exam</h4>
                             <div class="service-price">
-                                ₹<?= number_format($user['llr_price'], 2) ?>
+                                ₹<?= number_format($userData['llr_price'], 2) ?>
                                 <small>Service Fee</small>
                             </div>
                             <p class="card-text mb-3">Apply for Learner's License Registration</p>
@@ -267,7 +334,7 @@ try {
                             </div>
                             <h4 class="card-title">DL PDF</h4>
                             <div class="service-price">
-                                ₹<?= number_format($user['dl_price'], 2) ?>
+                                ₹<?= number_format($userData['dl_price'], 2) ?>
                                 <small>Service Fee</small>
                             </div>
                             <p class="card-text mb-3">Download Driving License PDF</p>
@@ -289,10 +356,10 @@ try {
                             </div>
                             <h4 class="card-title">DL NO UPDATE</h4>
                             <div class="service-price">
-                                ₹<?= number_format($user['dl_update_price'], 2) ?>
+                                ₹<?= number_format($userData['dl_update_price'], 2) ?>
                                 <small>Service Fee</small>
                             </div>
-                            <p class="card-text mb-3">Download Registration Certificate PDF</p>
+                            <p class="card-text mb-3">Updtae Driving Licence Mobile NO</p>
                             <button class="btn btn-service">
                                 <i class="bi bi-arrow-right me-1"></i> Get Started
                             </button>
@@ -300,28 +367,27 @@ try {
                     </div>
                 </a>
             </div>
-
-            <!-- RC PDF Card -->
-            <!-- <div class="col-12 col-md-6 col-lg-4">
-                <a href="maintain.php" class="text-decoration-none">
+            <!-- Medical Certificate -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <a href="./DL_no_update/dl_update.php" class="text-decoration-none">
                     <div class="card card-service h-100 service-card-rc">
                         <div class="card-body py-3 text-center">
                             <div class="service-icon">
                                 <i class="bi bi-file-earmark-break"></i>
                             </div>
-                            <h4 class="card-title">RC PDF</h4>
+                            <h4 class="card-title">Medical Certificate</h4>
                             <div class="service-price">
-                                ₹<?= number_format($user['rc_price'], 2) ?>
+                                ₹<?= number_format($userData['medical_price'], 2) ?>
                                 <small>Service Fee</small>
                             </div>
-                            <p class="card-text mb-3">Download Registration Certificate PDF</p>
+                            <p class="card-text mb-3">Updtae Driving Licence Mobile NO</p>
                             <button class="btn btn-service">
                                 <i class="bi bi-arrow-right me-1"></i> Get Started
                             </button>
                         </div>
                     </div>
                 </a>
-            </div> -->
+            </div>
         </div>
     </div>
 

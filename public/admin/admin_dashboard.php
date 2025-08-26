@@ -9,13 +9,27 @@ $total_services = $pdo->query('SELECT COUNT(*) FROM services')->fetchColumn();
 $total_requests = $pdo->query('SELECT COUNT(*) FROM service_requests')->fetchColumn();
 $total_payments = $pdo->query('SELECT COUNT(*) FROM payments')->fetchColumn();
 
-// Get top 10 users with most exam submissions
+// Get today's completed exam count
+$today_completed_exams = $pdo->query("
+    SELECT COUNT(*) 
+    FROM llr_tokens 
+    WHERE DATE(completed_at) = CURDATE() 
+    AND status = 'completed'
+")->fetchColumn();
+
+// Get top 10 users with most exam submissions (only successful ones)
 $top_exam_users = $pdo->query("
-    SELECT u.id, u.name, u.mobile, COUNT(lt.id) as exam_count 
+    SELECT 
+        u.id, 
+        u.name, 
+        u.mobile, 
+        COUNT(lt.id) as exam_count,
+        SUM(CASE WHEN DATE(lt.completed_at) = CURDATE() AND lt.status = 'completed' THEN 1 ELSE 0 END) as today_count
     FROM llr_tokens lt
     JOIN users u ON lt.user_id = u.id
+    WHERE lt.status = 'completed'
     GROUP BY u.id, u.name, u.mobile
-    ORDER BY exam_count DESC
+    ORDER BY today_count DESC, exam_count DESC
     LIMIT 10
 ")->fetchAll(PDO::FETCH_ASSOC);
 
@@ -50,14 +64,18 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
         body {
             background-color: #f8f9fc;
             font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            overflow-x: hidden;
         }
         
+        /* Sidebar Styles */
         .sidebar {
             background: linear-gradient(180deg, var(--primary-color) 10%, #224abe 100%);
             min-height: 100vh;
             position: fixed;
             width: 14rem;
             box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
         
         .sidebar .nav-link {
@@ -66,6 +84,7 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             padding: 1rem;
             margin: 0 0.5rem;
             border-radius: 0.35rem;
+            transition: all 0.3s;
         }
         
         .sidebar .nav-link:hover {
@@ -75,6 +94,8 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
         
         .sidebar .nav-link i {
             margin-right: 0.5rem;
+            width: 20px;
+            text-align: center;
         }
         
         .sidebar .nav-link.active {
@@ -82,28 +103,23 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             background-color: rgba(255, 255, 255, 0.2);
         }
         
+        /* Topbar Styles */
         .topbar {
             height: 4.375rem;
             box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
             background-color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 999;
         }
         
         .main-content {
             margin-left: 14rem;
-            padding: 2rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
         }
         
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-            .main-content {
-                margin-left: 0;
-            }
-        }
-        
+        /* Card Styles */
         .card {
             border: none;
             border-radius: 0.35rem;
@@ -118,9 +134,11 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             font-weight: 700;
         }
         
+        /* Stat Card Styles */
         .stat-card {
             border-left: 0.25rem solid;
             transition: transform 0.3s;
+            height: 100%;
         }
         
         .stat-card:hover {
@@ -143,19 +161,30 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             border-left-color: var(--warning-color);
         }
         
+        .stat-card.danger {
+            border-left-color: var(--danger-color);
+        }
+        
         .stat-icon {
             font-size: 2rem;
             opacity: 0.3;
         }
         
+        /* Table Styles */
         .table-responsive {
             overflow-x: auto;
         }
         
         .table {
             font-size: 0.85rem;
+            width: 100%;
         }
         
+        .table th {
+            white-space: nowrap;
+        }
+        
+        /* Badge Styles */
         .badge-success {
             background-color: var(--success-color);
         }
@@ -177,11 +206,142 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             font-weight: bold;
             color: var(--primary-color);
         }
+        
+        .today-count {
+            font-size: 0.85rem;
+            padding: 0.4em 0.8em;
+            min-width: 30px;
+            display: inline-block;
+            text-align: center;
+            background-color: var(--success-color);
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        
+        /* Mobile Toggle Button */
+        #sidebarToggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1001;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .main-content {
+                margin-left: 0;
+                padding: 1rem;
+            }
+            
+            .sidebar {
+                transform: translateX(-100%);
+                width: 16rem;
+            }
+            
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            
+            #sidebarToggle {
+                display: block;
+            }
+            
+            .topbar {
+                padding-left: 4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .stat-card .h5 {
+                font-size: 1.2rem;
+            }
+            
+            .stat-icon {
+                font-size: 1.5rem;
+            }
+            
+            .card-header {
+                padding: 0.75rem 1rem;
+            }
+            
+            .table {
+                font-size: 0.8rem;
+            }
+            
+            .btn {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .main-content {
+                padding: 0.5rem;
+            }
+            
+            .stat-card {
+                margin-bottom: 1rem;
+            }
+            
+            .stat-card .row {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .stat-card .col-auto {
+                margin-top: 0.5rem;
+            }
+            
+            .table-responsive {
+                font-size: 0.75rem;
+            }
+            
+            .topbar h1 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Overlay for mobile when sidebar is open */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        
+        .sidebar-overlay.show {
+            display: block;
+        }
+        
+        .today-highlight {
+            background-color: rgba(28, 200, 138, 0.1);
+        }
     </style>
 </head>
 <body>
+    <!-- Mobile Sidebar Toggle -->
+    <button id="sidebarToggle" class="btn">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- Overlay for mobile sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
         <div class="text-center py-4">
             <h4 class="text-white">Admin Panel</h4>
         </div>
@@ -212,7 +372,7 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="maintain.php">
+                <a class="nav-link" href="payment_record.php">
                     <i class="fas fa-fw fa-money-bill"></i>
                     Payments
                 </a>
@@ -227,7 +387,7 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
     </div>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <div class="main-content" id="mainContent">
         <!-- Topbar -->
         <nav class="navbar navbar-expand topbar mb-4 static-top shadow">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
@@ -283,11 +443,11 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
                         <div class="row align-items-center">
                             <div class="col">
                                 <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                    Total Requests</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $total_requests ?></div>
+                                    Today's Exams</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $today_completed_exams ?></div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-list fa-2x stat-icon text-info"></i>
+                                <i class="fas fa-check-circle fa-2x stat-icon text-info"></i>
                             </div>
                         </div>
                     </div>
@@ -317,7 +477,8 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             <div class="col-lg-12 mb-4">
                 <div class="card shadow h-100">
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Top Users by Exam Submissions</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Top Users by Exam Submissions (Completed Only)</h6>
+                        <span class="badge bg-success">Today: <?= date('M d, Y') ?></span>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -327,13 +488,14 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
                                         <th>#</th>
                                         <th>User Name</th>
                                         <th>Mobile</th>
-                                        <th>Exams Submitted</th>
+                                        <th>Total Completed Exams</th>
+                                        <th>Today's Completed Exams</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($top_exam_users as $index => $user): ?>
-                                    <tr>
+                                    <tr class="<?= $user['today_count'] > 0 ? 'today-highlight' : '' ?>">
                                         <td>
                                             <span class="badge bg-primary top-user-badge"><?= $index + 1 ?></span>
                                         </td>
@@ -341,6 +503,13 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
                                         <td><?= htmlspecialchars($user['mobile']) ?></td>
                                         <td>
                                             <span class="exam-count"><?= $user['exam_count'] ?></span>
+                                        </td>
+                                        <td>
+                                            <?php if ($user['today_count'] > 0): ?>
+                                                <span class="today-count"><?= $user['today_count'] ?></span>
+                                            <?php else: ?>
+                                                <span class="text-muted">0</span>
+                                            <?php endif; ?>
                                         </td>
                                         <td>
                                             <a href="admin_users.php?search=<?= urlencode($user['mobile']) ?>" 
@@ -439,5 +608,32 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Toggle sidebar on mobile
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            sidebar.classList.toggle('show');
+            overlay.classList.toggle('show');
+        });
+        
+        // Close sidebar when clicking on overlay
+        document.getElementById('sidebarOverlay').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            sidebar.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+        
+        // Auto-adjust sidebar on resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1200) {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('sidebarOverlay');
+                sidebar.classList.remove('show');
+                overlay.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,5 +1,3 @@
-<!-- jazapay_initiate.php -->
-
 <?php
 session_start();
 require_once __DIR__ . '/../../includes/db.php';
@@ -10,8 +8,15 @@ error_reporting(E_ALL);
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/payment_errors.log');
 
+// Check if user is logged in
+if (!isset($_SESSION['user']['id'])) {
+    $_SESSION['payment_error'] = ['message' => 'Please login first'];
+    header('Location: login.php');
+    exit;
+}
+
 // Validate input
-if (!isset($_SESSION['user']['id']) || $_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['amount'])) {
+if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['amount'])) {
     $_SESSION['payment_error'] = ['message' => 'Invalid request'];
     header('Location: add_money.php');
     exit;
@@ -19,7 +24,7 @@ if (!isset($_SESSION['user']['id']) || $_SERVER['REQUEST_METHOD'] !== 'POST' || 
 
 $amount = floatval($_POST['amount']);
 if ($amount < 10 || $amount > 100000) {
-    $_SESSION['payment_error'] = ['message' => 'Invalid amount'];
+    $_SESSION['payment_error'] = ['message' => 'Invalid amount. Must be between ₹10 and ₹100,000'];
     header('Location: add_money.php');
     exit;
 }
@@ -39,7 +44,7 @@ try {
     $apiData = [
         'apikey' => '72ba3bd0183631753f45720bf6a2a5a5',
         'amt' => number_format($amount, 2, '.', ''),
-        'callback' => 'https://yourdomain.com/jazapay_callback.php'
+        'callback' => 'https://yourdomain.com/jazapay_callback.php' // Replace with your actual callback URL
     ];
 
     // Call payment gateway
@@ -55,6 +60,7 @@ try {
 
     $response = curl_exec($ch);
     $error = curl_error($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
 
     if ($error) {
@@ -62,8 +68,12 @@ try {
     }
 
     $responseData = json_decode($response, true);
+    
+    // Log the response for debugging
+    error_log("JazaPay Initiate Response: " . print_r($responseData, true));
+    
     if (!$responseData || !isset($responseData['status'])) {
-        throw new Exception("Invalid API response");
+        throw new Exception("Invalid API response: " . $response);
     }
 
     if ($responseData['status'] !== "200") {
@@ -98,7 +108,9 @@ try {
     exit;
 
 } catch (Exception $e) {
-    $pdo->rollBack();
+    if (isset($pdo) && $pdo->inTransaction()) {
+        $pdo->rollBack();
+    }
     error_log("Payment initiation error: " . $e->getMessage());
     $_SESSION['payment_error'] = [
         'message' => 'Payment failed: ' . $e->getMessage(),
@@ -107,3 +119,4 @@ try {
     header('Location: add_money.php');
     exit;
 }
+?>

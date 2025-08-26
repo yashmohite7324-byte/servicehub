@@ -5,7 +5,7 @@ if (!isset($_SESSION['user']) || !isset($_GET['txnid'])) {
     exit;
 }
 
-require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/../../includes/db.php';
 
 $transaction_id = $_GET['txnid'];
 $user_id = $_SESSION['user']['id'];

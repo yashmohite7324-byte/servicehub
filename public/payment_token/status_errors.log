@@ -1,0 +1,583 @@
+[21-Aug-2025 18:37:31 Europe/Berlin] Status check error: Invalid API response
+[21-Aug-2025 18:37:36 Europe/Berlin] Status check error: Invalid API response
+[21-Aug-2025 18:37:41 Europe/Berlin] Status check error: Invalid API response
+[21-Aug-2025 18:37:55 Europe/Berlin] Status check error: Invalid API response
+[21-Aug-2025 18:38:55 Europe/Berlin] Status check error: Invalid API response
+[21-Aug-2025 18:39:55 Europe/Berlin] Status check error: Invalid API response
+[21-Aug-2025 18:40:55 Europe/Berlin] Status check error: Invalid API response
+[21-Aug-2025 18:41:55 Europe/Berlin] Status check error: Invalid API response
+[21-Aug-2025 18:42:55 Europe/Berlin] Status check error: Invalid API response
+[21-Aug-2025 18:43:55 Europe/Berlin] Status check error: Invalid API response
+[21-Aug-2025 18:44:55 Europe/Berlin] Status check error: Invalid API response
+[21-Aug-2025 18:45:08 Europe/Berlin] Status check error: Invalid API response
+[21-Aug-2025 18:52:35 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:52:39 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:52:42 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:52:45 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:52:48 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:52:51 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:52:54 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:52:57 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:00 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:03 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:06 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:09 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:12 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:15 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:18 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:21 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:24 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:27 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:30 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:33 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:36 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:39 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:42 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:45 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:48 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:51 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:53 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:53:57 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:00 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:03 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:06 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:09 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:12 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:15 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:18 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:21 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:24 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:27 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:30 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:33 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:36 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:44 Europe/Berlin] Status check error: cURL error: Failed to connect to jazainc.com port 443: Connection was aborted
+[21-Aug-2025 18:54:46 Europe/Berlin] Status check error: cURL error: Could not resolve host: jazainc.com
+[21-Aug-2025 18:54:48 Europe/Berlin] Status check error: cURL error: Could not resolve host: jazainc.com
+[21-Aug-2025 18:54:52 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:56 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:54:58 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:55:01 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:55:03 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:55:06 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:55:09 Europe/Berlin] Status check error: Invalid API response: 
+[21-Aug-2025 18:55:38 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:55:38 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:55:38 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:55:38 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:55:42 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:55:42 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:55:43 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:55:43 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:55:46 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:55:46 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:55:49 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:55:49 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:55:52 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:55:52 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:55:56 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:55:56 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:55:58 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:55:58 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:02 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:02 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:05 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:05 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:08 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:08 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:10 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:10 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:14 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:14 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:17 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:17 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:20 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:20 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:22 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:22 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:26 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:26 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:28 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:28 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:31 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:31 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:35 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:35 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:38 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:38 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:41 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:41 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:44 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:44 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:47 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:47 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:50 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:50 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:52 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:52 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:55 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:55 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:56:58 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:56:58 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:02 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:02 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:04 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:04 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:08 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:08 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:10 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:10 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:13 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:13 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:17 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:17 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:19 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:19 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:23 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:23 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:26 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:26 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:28 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:28 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:31 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:31 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:34 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:34 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:38 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:38 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:41 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:41 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:44 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:44 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:47 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:47 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:50 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:50 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:52 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:52 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:57:56 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:57:56 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:03 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:03 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:04 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:04 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:07 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:07 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:11 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:11 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:13 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:13 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:17 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:17 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:20 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:20 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:23 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:23 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:26 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:26 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:28 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:28 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:30 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:30 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:33 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:33 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:36 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:36 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:39 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:39 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:42 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:42 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:45 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:45 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:48 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:48 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:51 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:51 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:54 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:54 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:58:57 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:58:57 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:00 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:00 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:03 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:03 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:06 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:06 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:09 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:09 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:12 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:12 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:18 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:18 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:21 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:21 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:24 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:24 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:27 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:27 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:31 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:31 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:33 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:33 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:37 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:37 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:40 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:40 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:43 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:43 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:45 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:45 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:49 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:49 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:51 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:51 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:55 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:55 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 18:59:58 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 18:59:58 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:01 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:01 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:04 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:04 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:07 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:07 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:09 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:09 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:12 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:12 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:15 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:15 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:18 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:18 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:22 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:22 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:25 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:25 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:29 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:29 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:30 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:30 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:37 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:37 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:39 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:39 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:42 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:42 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:45 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:45 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:49 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:49 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:52 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:52 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:54 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:54 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:00:58 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:00:58 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:01 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:01 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:03 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:03 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:06 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:06 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:09 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:09 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:12 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:12 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:15 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:15 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:18 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:18 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:22 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:22 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:25 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:25 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:28 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:28 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:31 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:31 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:33 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:33 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:36 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:36 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:39 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:39 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:43 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:43 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:45 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:45 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:49 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:49 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:51 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:51 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:54 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:54 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:01:57 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:01:57 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:02:00 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:02:00 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:02:03 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:02:03 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:02:06 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:02:06 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:02:09 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:02:09 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:02:12 Europe/Berlin] JazaPay Status Check Response - HTTP Code: 200, Response: 
+[21-Aug-2025 19:02:12 Europe/Berlin] Status check error: Empty response from payment gateway
+[21-Aug-2025 19:02:32 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:02:32 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:02:32 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:02:34 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:02:34 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:02:34 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:02:37 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:02:37 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:02:37 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:02:44 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:02:44 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:02:44 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:02:47 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:02:47 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:02:47 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:02:50 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:02:50 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:02:50 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:02:53 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:02:53 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:02:53 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:02:56 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:02:56 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:02:56 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:02:59 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:02:59 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:02:59 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:03:02 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:03:02 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:03:02 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:03:05 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:03:05 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:03:05 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:03:08 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:03:08 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:03:08 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:03:11 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:03:11 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:03:11 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:03:14 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:03:14 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:03:14 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:03:17 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:03:17 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:03:17 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:03:20 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:03:20 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:03:20 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:03:57 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:03:57 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:03:57 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:04:00 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:04:00 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:04:00 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:04:03 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:04:03 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:04:03 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:04:06 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:04:06 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:04:06 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:04:09 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:04:09 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:04:09 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:04:12 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:04:12 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:04:12 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:27:57 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:27:57 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:27:57 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:01 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:01 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:01 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:03 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:03 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:03 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:06 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:06 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:06 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:09 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:09 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:09 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:12 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:12 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:12 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:15 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:15 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:15 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:18 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:18 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:19 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:21 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:21 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:22 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:24 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:24 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:24 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:27 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:27 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:27 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:30 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:30 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:31 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:33 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:33 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:34 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:28:36 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:28:36 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:28:37 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:22 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:22 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:22 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:25 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:25 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:25 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:28 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:28 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:28 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:31 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:31 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:31 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:34 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:34 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:35 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:37 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:37 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:38 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:40 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:40 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:41 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:43 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:43 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:44 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:46 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:46 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:47 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:49 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:49 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:50 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:52 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:52 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:52 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:55 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:55 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:55 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:37:58 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:37:58 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:37:58 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:01 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:01 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:02 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:04 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:04 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:04 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:07 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:07 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:08 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:10 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:10 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:11 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:13 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:13 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:14 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:16 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:16 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:16 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:19 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:19 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:19 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:22 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:22 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:22 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:25 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:25 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:25 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:28 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:28 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:29 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:31 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:31 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:32 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:34 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:34 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:35 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:37 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:37 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:38 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:40 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:40 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:41 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:43 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:43 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:44 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:46 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:46 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:47 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:49 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:49 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:50 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:38:52 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:38:52 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:38:52 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:00 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:00 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:00 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:03 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:03 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:03 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:06 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:06 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:06 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:09 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:09 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:09 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:12 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:12 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:12 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:15 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:15 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:15 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:19 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:19 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:19 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:22 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:22 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:22 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:24 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:24 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:25 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:27 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:27 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:27 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:31 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:31 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:31 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:33 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:33 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:34 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:36 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:36 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:37 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:40 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:40 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:40 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:43 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:43 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:43 Europe/Berlin] Trying third approach for JazaPay status check
+[21-Aug-2025 19:48:45 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[21-Aug-2025 19:48:45 Europe/Berlin] Trying alternative approach for JazaPay status check
+[21-Aug-2025 19:48:45 Europe/Berlin] Trying third approach for JazaPay status check
+[25-Aug-2025 21:57:51 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[25-Aug-2025 21:57:51 Europe/Berlin] Trying alternative approach for JazaPay status check
+[25-Aug-2025 21:57:51 Europe/Berlin] Trying third approach for JazaPay status check
+[25-Aug-2025 21:57:54 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[25-Aug-2025 21:57:54 Europe/Berlin] Trying alternative approach for JazaPay status check
+[25-Aug-2025 21:57:54 Europe/Berlin] Trying third approach for JazaPay status check
+[25-Aug-2025 21:57:57 Europe/Berlin] JazaPay Status Check - HTTP Code: 200, Error: , Response: NULL
+[25-Aug-2025 21:57:57 Europe/Berlin] Trying alternative approach for JazaPay status check
+[25-Aug-2025 21:57:57 Europe/Berlin] Trying third approach for JazaPay status check

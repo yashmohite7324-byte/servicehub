@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RTO Service Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    .form-container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+    .form-group {
+      margin-bottom: 25px; /* consistent spacing */
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      margin: 4px 4px 0 10px;
+    }
+    input{
+      margin: 5px;
+    }
+    .three-column {
+      display: grid;
+      grid-template-columns: 2fr 2fr 1fr;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    .vehicle-selection {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    select[multiple] {
+      height: 120px;
+    }
+    .vehicle-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+    }
+    .vehicle-buttons button {
+      padding: 8px 12px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .vehicle-buttons button:hover {
+      background: #0056b3;
+    }
+    .confirm-box {
+      margin: 25px 0;
+      font-size: 14px;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      background: #28a745;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>RTO Services Application Form</h2>
+    <form>
+      <!-- Aadhaar, Mobile, RTO Code in same line -->
+      <div class="three-column">
+        <div class="form-group">
+          <label for="aadhaar">Aadhaar Number</label>
+          <input type="text" id="aadhaar" placeholder="Enter Aadhaar No">
+        </div>
+        <div class="form-group">
+          <label for="mobile">Aadhaar Linked Mobile Number</label>
+          <input type="text" id="mobile" placeholder="Enter Mobile No">
+        </div>
+        <div class="form-group">
+          <label for="rto">RTO Code</label>
+          <input type="text" id="rto" maxlength="6" placeholder="RTO">
+        </div>
+      </div>
+
+      <!-- Relation type -->
+      <div class="two-column">
+        <div class="form-group">
+          <label for="relation">Relation Type</label>
+          <select id="relation">
+            <option value="father">Father</option>
+            <option value="husband">Husband</option>
+            <option value="relative">Relative</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="relativeName">Relative’s Name</label>
+          <input type="text" id="relativeName" placeholder="Enter Relative’s Name">
+        </div>
+      </div>
+
+      <!-- Vehicle selection -->
+      <div class="form-group">
+        <label>Select Class of Vehicles</label>
+        <div class="vehicle-selection">
+          <select id="availableVehicles" multiple>
+            <option>Motor cycle without Gear (Non Transport) (MCWOG)</option>
+            <option>Motor Cycle with Gear (Non Transport) (MCWG)</option>
+            <option>LIGHT MOTOR VEHICLE (LMV)</option>
+            <option>LMV -3 Wheeler NT (3W-NT)</option>
+            <option>LMV-Tractor-NT (TRCTOR)</option>
+            <option>Adapted Vehicle (ADPVEH)</option>
+            <option>Road Roller (RDRLR)</option>
+            <option>Other Others (OTHER)</option>
+            <option>Others-Loader/Excavator (LDRXCV)</option>
+            <option>Others-Cranes (CRANE)</option>
+            <option>Others-Forklift (FLIFT)</option>
+            <option>Others-Boring Rigg (BRIGS)</option>
+            <option>Others-Construction Equipments (CNEQP)</option>
+            <option>Others-Harvester (HARVST)</option>
+            <option>Others-Trailers (TRAILR)</option>
+            <option>Others-Agriculture Tractor and Power Tiller (AGRTLR)</option>
+            <option>Others-Tow Trucks (TOWTRK)</option>
+            <option>Others-Breakdown Van and Recovery Van (BRKREC)</option>
+          </select>
+
+          <div class="vehicle-buttons">
+            <button type="button" onclick="moveSelected('availableVehicles','selectedVehicles')">➡️</button>
+            <button type="button" onclick="moveSelected('selectedVehicles','availableVehicles')">⬅️</button>
+          </div>
+
+          <select id="selectedVehicles" multiple></select>
+        </div>
+      </div>
+
+      <!-- District, Taluka -->
+      <div class="two-column">
+        <div class="form-group">
+          <label for="district">District</label>
+          <input type="text" id="district" placeholder="Enter District">
+        </div>
+        <div class="form-group">
+          <label for="taluka">Taluka</label>
+          <input type="text" id="taluka" placeholder="Enter Taluka">
+        </div>
+      </div>
+
+      <!-- Town -->
+      <div class="form-group">
+        <label for="town">Town</label>
+        <input type="text" id="town" placeholder="Enter Town">
+      </div>
+
+      <!-- Photo and Signature -->
+      <div class="two-column">
+        <div class="form-group">
+          <label for="photo">Upload Photo (Optional)</label>
+          <input type="file" id="photo" accept="image/*">
+        </div>
+        <div class="form-group">
+          <label for="signature">Upload Signature (Required)</label>
+          <input type="file" id="signature" accept="image/*" required>
+        </div>
+      </div>
+
+      <!-- Confirm Checkbox -->
+      <div class="confirm-box">
+        <input type="checkbox" id="confirm" required>
+        <label for="confirm"> I confirm that I am making a new application</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </div>
+
+  <script>
+    function moveSelected(fromId, toId) {
+      const from = document.getElementById(fromId);
+      const to = document.getElementById(toId);
+
+      Array.from(from.selectedOptions).forEach(option => {
+        to.appendChild(option);
+      });
+    }
+  </script>
+</body>
+</html>
