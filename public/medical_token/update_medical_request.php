@@ -1,11 +1,9 @@
-<!-- update_request.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DL Update Request</title>
+    <title>Medical Certificate Request</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
@@ -142,6 +140,7 @@
             font-size: 0.875rem;
             color: #495057;
             transition: all 0.2s ease;
+            cursor: pointer;
         }
         
         .quick-remark-btn:hover {
@@ -160,6 +159,17 @@
             margin-bottom: 1.5rem;
         }
         
+        .auto-submit-info {
+            background-color: #d1ecf1;
+            border-left: 4px solid #0c5460;
+            color: #0c5460;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        /* Responsive adjustments */
         @media (max-width: 768px) {
             .detail-row {
                 flex-direction: column;
@@ -193,6 +203,10 @@
                 width: 100%;
                 text-align: left;
             }
+            
+            .btn-update {
+                width: 100%;
+            }
         }
         
         @media (max-width: 576px) {
@@ -202,6 +216,7 @@
             
             .container {
                 border-radius: 15px;
+                margin: 10px;
             }
             
             .header h1 {
@@ -212,16 +227,39 @@
                 padding: 1rem;
             }
             
-            .btn-update {
-                width: 100%;
-            }
-            
             .access-denied {
                 padding: 2rem 1rem;
             }
             
             .access-denied-icon {
                 font-size: 3rem;
+            }
+            
+            .detail-label {
+                font-size: 0.9rem;
+            }
+            
+            .detail-value {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .header {
+                padding: 1rem;
+            }
+            
+            .content {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 1.3rem;
+            }
+            
+            .badge {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
             }
         }
     </style>
@@ -230,8 +268,8 @@
     <div class="container">
         <div class="header">
             <h1 class="mb-2">
-                <i class="bi bi-card-checklist me-2"></i>
-                DL Update Request
+                <i class="bi bi-file-medical me-2"></i>
+                Medical Certificate Request
             </h1>
             <p class="mb-0">Status: <span class="badge bg-info" id="currentStatus">Loading...</span></p>
         </div>
@@ -270,11 +308,15 @@
                         <select class="form-select" id="status" name="status" required>
                             <option value="">-- Select Status --</option>
                             <option value="completed">Completed</option>
-                            <option value="rejected">Rejected (with refund)</option>
+                            <option value="rejected">Rejected</option>
                         </select>
                         <div id="refundInfo" class="refund-info">
                             <i class="bi bi-info-circle me-1"></i>
                             When rejected, the service amount will be automatically refunded to the user's wallet.
+                        </div>
+                        <div id="autoSubmitInfo" class="auto-submit-info">
+                            <i class="bi bi-info-circle me-1"></i>
+                            When completed, the remark will be automatically set and the form will be submitted.
                         </div>
                     </div>
                     
@@ -284,14 +326,11 @@
                         </label>
                         
                         <div class="quick-remarks">
-                            <button type="button" class="quick-remark-btn" data-remark="DL NO UPDATE SUCCESSFULLY">
-                                <i class="bi bi-check-circle me-1"></i>DL NO UPDATE SUCCESSFULLY
+                            <button type="button" class="quick-remark-btn" data-remark="MEDICAL CERTIFICATE GENERATED SUCCESSFULLY">
+                                <i class="bi bi-check-circle me-1"></i>MEDICAL CERTIFICATE GENERATED
                             </button>
-                            <button type="button" class="quick-remark-btn" data-remark="DL NO & DOB NOT MATCH/ INCORRECT DETAILS">
-                                <i class="bi bi-x-circle me-1"></i>DL NO & DOB NOT MATCH
-                            </button>
-                            <button type="button" class="quick-remark-btn" data-remark="30 DAYS ISSUE ADD NEW MOBILE NUMBER">
-                                <i class="bi bi-clock me-1"></i>30 DAYS ISSUE
+                            <button type="button" class="quick-remark-btn" data-remark="APPLICATION NOT FOUNDD">
+                                <i class="bi bi-x-circle me-1"></i>APPLICATION NOT FOUND
                             </button>
                         </div>
                         
@@ -336,6 +375,7 @@
             const currentStatus = document.getElementById('currentStatus');
             const statusSelect = document.getElementById('status');
             const refundInfo = document.getElementById('refundInfo');
+            const autoSubmitInfo = document.getElementById('autoSubmitInfo');
             const servicePriceInput = document.getElementById('servicePrice');
             const remarksTextarea = document.getElementById('remarks');
             const mainContent = document.getElementById('mainContent');
@@ -349,12 +389,26 @@
             // Load request details on page load
             loadRequestDetails();
             
-            // Show refund info when rejected status is selected
+            // Show/hide info messages when status is selected
             statusSelect.addEventListener('change', function() {
                 if (this.value === 'rejected') {
                     refundInfo.style.display = 'block';
+                    autoSubmitInfo.style.display = 'none';
+                    // Auto-set remark for rejected status
+                    remarksTextarea.value = "APPLICATION NOT FOUNDD";
+                } else if (this.value === 'completed') {
+                    refundInfo.style.display = 'none';
+                    autoSubmitInfo.style.display = 'block';
+                    // Auto-set remark for completed status
+                    remarksTextarea.value = "MEDICAL CERTIFICATE GENERATED SUCCESSFULLY";
+                    
+                    // Auto-submit after a short delay
+                    setTimeout(() => {
+                        statusForm.dispatchEvent(new Event('submit'));
+                    }, 300);
                 } else {
                     refundInfo.style.display = 'none';
+                    autoSubmitInfo.style.display = 'none';
                 }
             });
             
@@ -406,7 +460,7 @@
                 formData.append('token', token);
                 formData.append('action', 'get_details');
                 
-                fetch('process_status_update.php', {
+                fetch('process_medical_status_update.php', {
                     method: 'POST',
                     body: formData
                 })
@@ -434,9 +488,9 @@
                         servicePriceInput.value = data.request.service_price;
                         
                         // Update page title and header
-                        document.title = `DL Update Request #${data.request.id}`;
+                        document.title = `Medical Certificate Request #${data.request.id}`;
                         document.querySelector('.header h1').innerHTML = 
-                            `<i class="bi bi-card-checklist me-2"></i>DL Update Request #${data.request.id}`;
+                            `<i class="bi bi-file-medical me-2"></i>Medical Certificate Request #${data.request.id}`;
                         
                         // Update status badge
                         currentStatus.textContent = data.request.status.charAt(0).toUpperCase() + data.request.status.slice(1);
@@ -445,34 +499,13 @@
                              data.request.status === 'rejected' ? 'danger' : 
                              data.request.status === 'processing' ? 'warning' : 'info');
                         
-                        // Update request details (without user mobile and service price)
+                        // Update request details
                         requestDetails.innerHTML = `
                             <div class="detail-row">
                                 <span class="detail-label">
-                                    <i class="bi bi-card-heading me-1"></i>Document Type:
+                                    <i class="bi bi-card-text me-1"></i>Application Number:
                                 </span>
-                                <span class="detail-value">${data.request.document_type}</span>
-                            </div>
-                            
-                            <div class="detail-row">
-                                <span class="detail-label">
-                                    <i class="bi bi-card-text me-1"></i>Document Number:
-                                </span>
-                                <span class="detail-value">${data.request.dl_number}</span>
-                            </div>
-                            
-                            <div class="detail-row">
-                                <span class="detail-label">
-                                    <i class="bi bi-calendar me-1"></i>Date of Birth:
-                                </span>
-                                <span class="detail-value">${data.request.dob}</span>
-                            </div>
-                            
-                            <div class="detail-row">
-                                <span class="detail-label">
-                                    <i class="bi bi-telephone me-1"></i>Request Mobile:
-                                </span>
-                                <span class="detail-value">${data.request.mobile}</span>
+                                <span class="detail-value">${data.request.application_no}</span>
                             </div>
                             
                             <div class="detail-row">
@@ -516,14 +549,6 @@
                     return;
                 }
                 
-                // Confirm rejection with refund
-                if (status === 'rejected') {
-                    const confirmRefund = confirm("Are you sure you want to reject this request? The service amount will be refunded to the user's wallet.");
-                    if (!confirmRefund) {
-                        return;
-                    }
-                }
-                
                 // Disable submit button
                 const submitBtn = statusForm.querySelector('button[type="submit"]');
                 submitBtn.disabled = true;
@@ -538,7 +563,7 @@
                 formData.append('service_price', servicePrice);
                 
                 // Send AJAX request to backend
-                fetch('process_status_update.php', {
+                fetch('process_medical_status_update.php', {
                     method: 'POST',
                     body: formData
                 })
@@ -560,6 +585,7 @@
                         // Clear form
                         statusForm.reset();
                         refundInfo.style.display = 'none';
+                        autoSubmitInfo.style.display = 'none';
                         
                         // Hide form and show access denied message
                         mainContent.style.display = 'none';

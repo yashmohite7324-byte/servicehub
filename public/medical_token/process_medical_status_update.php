@@ -1,5 +1,3 @@
-<!-- process_status_update.php -->
-
 <?php
 // Enable error reporting for debugging
 error_reporting(E_ALL);
@@ -33,10 +31,11 @@ if (empty($token)) {
 try {
     // Verify token and get request details with user-specific service price
     $stmt = $pdo->prepare("
-        SELECT r.*, u.id as user_id, COALESCE(u.dl_update_price, 100.00) as dl_update_price 
-        FROM dl_update_requests r 
-        LEFT JOIN users u ON r.user_id = u.id 
-        WHERE r.access_token = ?
+        SELECT mcr.*, u.id as user_id, u.name as user_name, u.mobile as user_mobile, 
+               COALESCE(u.medical_price, 70.00) as medical_price 
+        FROM medical_certificate_requests mcr 
+        LEFT JOIN users u ON mcr.user_id = u.id 
+        WHERE mcr.access_token = ?
     ");
     $stmt->execute([$token]);
     $request = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -52,12 +51,11 @@ try {
             'success' => true, 
             'request' => [
                 'id' => $request['id'],
-                'document_type' => $request['document_type'],
-                'dl_number' => $request['dl_number'],
-                'dob' => $request['dob'],
-                'mobile' => $request['mobile'],
+                'application_no' => $request['application_no'],
+                'user_name' => $request['user_name'],
+                'user_mobile' => $request['user_mobile'],
                 'status' => $request['status'],
-                'service_price' => $request['dl_update_price'], // Use user-specific price
+                'service_price' => $request['medical_price'], // Use user-specific price
                 'admin_remarks' => $request['admin_remarks'],
                 'created_at' => date('d M Y, h:i A', strtotime($request['created_at']))
             ]
@@ -83,7 +81,7 @@ try {
     
     // Update request status
     $updateStmt = $pdo->prepare("
-        UPDATE dl_update_requests 
+        UPDATE medical_certificate_requests 
         SET status = ?, admin_remarks = ?, updated_at = NOW() 
         WHERE access_token = ?
     ");
@@ -99,7 +97,7 @@ try {
     $refundAmount = 0;
     if ($status === 'rejected') {
         // Use the user-specific service price from the users table
-        $refundAmount = $request['dl_update_price'];
+        $refundAmount = $request['medical_price'];
         
         // Get current wallet balance
         $walletStmt = $pdo->prepare("SELECT wallet_balance FROM users WHERE id = ?");
@@ -129,8 +127,8 @@ try {
             $paymentResult = $paymentStmt->execute([
                 $request['user_id'], 
                 $refundAmount, 
-                "Refund for DL update request #" . $request['id'] . " - " . $remarks,
-                'dlupdate_refund_' . $request['id'], 
+                "Refund for medical certificate request #" . $request['id'] . " - " . $remarks,
+                'medical_refund_' . $request['id'], 
                 $newBalance
             ]);
             
@@ -156,7 +154,7 @@ try {
     if ($pdo->inTransaction()) {
         $pdo->rollBack();
     }
-    error_log("Status update error: " . $e->getMessage());
+    error_log("Medical status update error: " . $e->getMessage());
     echo json_encode([
         'success' => false, 
         'message' => 'Server error occurred. Please try again later.'

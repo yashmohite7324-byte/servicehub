@@ -43,6 +43,7 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,13 +61,13 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             --light-color: #f8f9fc;
             --dark-color: #5a5c69;
         }
-        
+
         body {
             background-color: #f8f9fc;
             font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             overflow-x: hidden;
         }
-        
+
         /* Sidebar Styles */
         .sidebar {
             background: linear-gradient(180deg, var(--primary-color) 10%, #224abe 100%);
@@ -77,7 +78,7 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             z-index: 1000;
             transition: all 0.3s ease;
         }
-        
+
         .sidebar .nav-link {
             color: rgba(255, 255, 255, 0.8);
             font-weight: 600;
@@ -86,23 +87,23 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             border-radius: 0.35rem;
             transition: all 0.3s;
         }
-        
+
         .sidebar .nav-link:hover {
             color: #fff;
             background-color: rgba(255, 255, 255, 0.1);
         }
-        
+
         .sidebar .nav-link i {
             margin-right: 0.5rem;
             width: 20px;
             text-align: center;
         }
-        
+
         .sidebar .nav-link.active {
             color: #fff;
             background-color: rgba(255, 255, 255, 0.2);
         }
-        
+
         /* Topbar Styles */
         .topbar {
             height: 4.375rem;
@@ -112,13 +113,13 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             top: 0;
             z-index: 999;
         }
-        
+
         .main-content {
             margin-left: 14rem;
             padding: 1.5rem;
             transition: all 0.3s ease;
         }
-        
+
         /* Card Styles */
         .card {
             border: none;
@@ -126,87 +127,87 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
             margin-bottom: 1.5rem;
         }
-        
+
         .card-header {
             background-color: #f8f9fc;
             border-bottom: 1px solid #e3e6f0;
             padding: 1rem 1.35rem;
             font-weight: 700;
         }
-        
+
         /* Stat Card Styles */
         .stat-card {
             border-left: 0.25rem solid;
             transition: transform 0.3s;
             height: 100%;
         }
-        
+
         .stat-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .stat-card.primary {
             border-left-color: var(--primary-color);
         }
-        
+
         .stat-card.success {
             border-left-color: var(--success-color);
         }
-        
+
         .stat-card.info {
             border-left-color: var(--info-color);
         }
-        
+
         .stat-card.warning {
             border-left-color: var(--warning-color);
         }
-        
+
         .stat-card.danger {
             border-left-color: var(--danger-color);
         }
-        
+
         .stat-icon {
             font-size: 2rem;
             opacity: 0.3;
         }
-        
+
         /* Table Styles */
         .table-responsive {
             overflow-x: auto;
         }
-        
+
         .table {
             font-size: 0.85rem;
             width: 100%;
         }
-        
+
         .table th {
             white-space: nowrap;
         }
-        
+
         /* Badge Styles */
         .badge-success {
             background-color: var(--success-color);
         }
-        
+
         .badge-warning {
             background-color: var(--warning-color);
         }
-        
+
         .badge-danger {
             background-color: var(--danger-color);
         }
-        
+
         .top-user-badge {
             font-size: 0.75rem;
             padding: 0.35em 0.65em;
         }
-        
+
         .exam-count {
             font-weight: bold;
             color: var(--primary-color);
         }
-        
+
         .today-count {
             font-size: 0.85rem;
             padding: 0.4em 0.8em;
@@ -218,7 +219,7 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             border-radius: 10px;
             font-weight: bold;
         }
-        
+
         /* Mobile Toggle Button */
         #sidebarToggle {
             display: none;
@@ -232,84 +233,84 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             border-radius: 50%;
             width: 40px;
             height: 40px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
-        
+
         /* Responsive Styles */
         @media (max-width: 1200px) {
             .main-content {
                 margin-left: 0;
                 padding: 1rem;
             }
-            
+
             .sidebar {
                 transform: translateX(-100%);
                 width: 16rem;
             }
-            
+
             .sidebar.show {
                 transform: translateX(0);
             }
-            
+
             #sidebarToggle {
                 display: block;
             }
-            
+
             .topbar {
                 padding-left: 4rem;
             }
         }
-        
+
         @media (max-width: 768px) {
             .stat-card .h5 {
                 font-size: 1.2rem;
             }
-            
+
             .stat-icon {
                 font-size: 1.5rem;
             }
-            
+
             .card-header {
                 padding: 0.75rem 1rem;
             }
-            
+
             .table {
                 font-size: 0.8rem;
             }
-            
+
             .btn {
                 padding: 0.25rem 0.5rem;
                 font-size: 0.8rem;
             }
         }
-        
+
         @media (max-width: 576px) {
             .main-content {
                 padding: 0.5rem;
             }
-            
+
             .stat-card {
                 margin-bottom: 1rem;
             }
-            
+
             .stat-card .row {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .stat-card .col-auto {
                 margin-top: 0.5rem;
             }
-            
+
             .table-responsive {
                 font-size: 0.75rem;
             }
-            
+
             .topbar h1 {
                 font-size: 1.5rem;
             }
         }
-        
+
         /* Overlay for mobile when sidebar is open */
         .sidebar-overlay {
             display: none;
@@ -321,22 +322,23 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
-        
+
         .sidebar-overlay.show {
             display: block;
         }
-        
+
         .today-highlight {
             background-color: rgba(28, 200, 138, 0.1);
         }
     </style>
 </head>
+
 <body>
     <!-- Mobile Sidebar Toggle -->
     <button id="sidebarToggle" class="btn">
         <i class="fas fa-bars"></i>
     </button>
-    
+
     <!-- Overlay for mobile sidebar -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
@@ -361,10 +363,18 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="dl_no_req.php">
-                    <i class="fas fa-fw fa-cog"></i>
-                    DL RQUESTES
+                    <i class="fas fa-fw fa-id-card"></i>
+                    DL REQUESTS
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="medical_report.php">
+                    <i class="fas fa-fw fa-notes-medical"></i>
+                    Medical Requests
+                </a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="maintain.php">
                     <i class="fas fa-fw fa-list"></i>
@@ -495,29 +505,29 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
                                 </thead>
                                 <tbody>
                                     <?php foreach ($top_exam_users as $index => $user): ?>
-                                    <tr class="<?= $user['today_count'] > 0 ? 'today-highlight' : '' ?>">
-                                        <td>
-                                            <span class="badge bg-primary top-user-badge"><?= $index + 1 ?></span>
-                                        </td>
-                                        <td><?= htmlspecialchars($user['name']) ?></td>
-                                        <td><?= htmlspecialchars($user['mobile']) ?></td>
-                                        <td>
-                                            <span class="exam-count"><?= $user['exam_count'] ?></span>
-                                        </td>
-                                        <td>
-                                            <?php if ($user['today_count'] > 0): ?>
-                                                <span class="today-count"><?= $user['today_count'] ?></span>
-                                            <?php else: ?>
-                                                <span class="text-muted">0</span>
-                                            <?php endif; ?>
-                                        </td>
-                                        <td>
-                                            <a href="admin_users.php?search=<?= urlencode($user['mobile']) ?>" 
-                                               class="btn btn-sm btn-outline-primary">
-                                                <i class="fas fa-eye"></i> View
-                                            </a>
-                                        </td>
-                                    </tr>
+                                        <tr class="<?= $user['today_count'] > 0 ? 'today-highlight' : '' ?>">
+                                            <td>
+                                                <span class="badge bg-primary top-user-badge"><?= $index + 1 ?></span>
+                                            </td>
+                                            <td><?= htmlspecialchars($user['name']) ?></td>
+                                            <td><?= htmlspecialchars($user['mobile']) ?></td>
+                                            <td>
+                                                <span class="exam-count"><?= $user['exam_count'] ?></span>
+                                            </td>
+                                            <td>
+                                                <?php if ($user['today_count'] > 0): ?>
+                                                    <span class="today-count"><?= $user['today_count'] ?></span>
+                                                <?php else: ?>
+                                                    <span class="text-muted">0</span>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td>
+                                                <a href="admin_users.php?search=<?= urlencode($user['mobile']) ?>"
+                                                    class="btn btn-sm btn-outline-primary">
+                                                    <i class="fas fa-eye"></i> View
+                                                </a>
+                                            </td>
+                                        </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
@@ -548,12 +558,12 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
                                 </thead>
                                 <tbody>
                                     <?php foreach ($recent_users as $user): ?>
-                                    <tr>
-                                        <td><?= htmlspecialchars($user['id']) ?></td>
-                                        <td><?= htmlspecialchars($user['name']) ?></td>
-                                        <td><?= htmlspecialchars($user['mobile']) ?></td>
-                                        <td><?= date('M d, Y', strtotime($user['created_at'])) ?></td>
-                                    </tr>
+                                        <tr>
+                                            <td><?= htmlspecialchars($user['id']) ?></td>
+                                            <td><?= htmlspecialchars($user['name']) ?></td>
+                                            <td><?= htmlspecialchars($user['mobile']) ?></td>
+                                            <td><?= date('M d, Y', strtotime($user['created_at'])) ?></td>
+                                        </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
@@ -582,21 +592,21 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
                                 </thead>
                                 <tbody>
                                     <?php foreach ($recent_payments as $payment): ?>
-                                    <tr>
-                                        <td><?= htmlspecialchars($payment['id']) ?></td>
-                                        <td><?= htmlspecialchars($payment['name']) ?></td>
-                                        <td>₹<?= number_format($payment['amount'], 2) ?></td>
-                                        <td>
-                                            <?php if ($payment['status'] == 'success'): ?>
-                                                <span class="badge badge-success">Success</span>
-                                            <?php elseif ($payment['status'] == 'pending'): ?>
-                                                <span class="badge badge-warning">Pending</span>
-                                            <?php else: ?>
-                                                <span class="badge badge-danger">Failed</span>
-                                            <?php endif; ?>
-                                        </td>
-                                        <td><?= date('M d, Y', strtotime($payment['created_at'])) ?></td>
-                                    </tr>
+                                        <tr>
+                                            <td><?= htmlspecialchars($payment['id']) ?></td>
+                                            <td><?= htmlspecialchars($payment['name']) ?></td>
+                                            <td>₹<?= number_format($payment['amount'], 2) ?></td>
+                                            <td>
+                                                <?php if ($payment['status'] == 'success'): ?>
+                                                    <span class="badge badge-success">Success</span>
+                                                <?php elseif ($payment['status'] == 'pending'): ?>
+                                                    <span class="badge badge-warning">Pending</span>
+                                                <?php else: ?>
+                                                    <span class="badge badge-danger">Failed</span>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td><?= date('M d, Y', strtotime($payment['created_at'])) ?></td>
+                                        </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
@@ -616,7 +626,7 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             sidebar.classList.toggle('show');
             overlay.classList.toggle('show');
         });
-        
+
         // Close sidebar when clicking on overlay
         document.getElementById('sidebarOverlay').addEventListener('click', function() {
             const sidebar = document.getElementById('sidebar');
@@ -624,7 +634,7 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
             sidebar.classList.remove('show');
             overlay.classList.remove('show');
         });
-        
+
         // Auto-adjust sidebar on resize
         window.addEventListener('resize', function() {
             if (window.innerWidth > 1200) {
@@ -636,4 +646,5 @@ $recent_payments = $pdo->query("SELECT p.id, u.name, p.amount, p.status, p.creat
         });
     </script>
 </body>
+
 </html>
